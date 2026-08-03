@@ -57,6 +57,11 @@ void SetUpBattleVarsAndBirchZigzagoon(void)
     gBattleControllerExecFlags = 0;
     ClearBattleAnimationVars();
     ClearBattleMonForms();
+// UB: at the start of a battle CheckMoveLimitations is called with gActiveBattler 
+// from the previous battle, which can lead to multiple arrays being accessed out of bounds
+#ifdef UBFIX
+    gActiveBattler = 0;
+#endif
     BattleAI_HandleItemUseBeforeAISetup(0xF);
 
     if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
@@ -260,7 +265,7 @@ static void InitSinglePlayerBtlControllers(void)
             {
                 u8 multiplayerId;
 
-                for (multiplayerId = gRecordedBattleMultiplayerId, i = 0; i < MAX_BATTLERS_COUNT; i++)
+                for (multiplayerId = gRecordedBattleMultiplayerId, i = 0; i < MAX_LINK_PLAYERS; i++)
                 {
                     switch (gLinkPlayers[i].id)
                     {
@@ -502,7 +507,7 @@ static void InitLinkBtlControllers(void)
         if (gBattleTypeFlags & BATTLE_TYPE_IS_MASTER)
             gBattleMainFunc = BeginBattleIntro;
 
-        for (i = 0; i < MAX_BATTLERS_COUNT; i++)
+        for (i = 0; i < MAX_LINK_PLAYERS; i++)
         {
             switch (gLinkPlayers[i].id)
             {
@@ -1128,15 +1133,15 @@ void BtlController_EmitMoveAnimation(u8 bufferId, u16 move, u8 turnOfMove, u16 m
     PrepareBufferDataTransfer(bufferId, sBattleBuffersTransferData, 16 + sizeof(struct DisableStruct));
 }
 
-void BtlController_EmitPrintString(u8 bufferId, u16 stringID)
+void BtlController_EmitPrintString(u8 bufferId, u16 stringId)
 {
     s32 i;
     struct BattleMsgData *stringInfo;
 
     sBattleBuffersTransferData[0] = CONTROLLER_PRINTSTRING;
     sBattleBuffersTransferData[1] = gBattleOutcome;
-    sBattleBuffersTransferData[2] = stringID;
-    sBattleBuffersTransferData[3] = (stringID & 0xFF00) >> 8;
+    sBattleBuffersTransferData[2] = stringId;
+    sBattleBuffersTransferData[3] = (stringId & 0xFF00) >> 8;
 
     stringInfo = (struct BattleMsgData *)(&sBattleBuffersTransferData[4]);
     stringInfo->currentMove = gCurrentMove;
@@ -1160,15 +1165,15 @@ void BtlController_EmitPrintString(u8 bufferId, u16 stringID)
     PrepareBufferDataTransfer(bufferId, sBattleBuffersTransferData, sizeof(struct BattleMsgData) + 4);
 }
 
-void BtlController_EmitPrintSelectionString(u8 bufferId, u16 stringID)
+void BtlController_EmitPrintSelectionString(u8 bufferId, u16 stringId)
 {
     s32 i;
     struct BattleMsgData *stringInfo;
 
     sBattleBuffersTransferData[0] = CONTROLLER_PRINTSTRINGPLAYERONLY;
     sBattleBuffersTransferData[1] = CONTROLLER_PRINTSTRINGPLAYERONLY;
-    sBattleBuffersTransferData[2] = stringID;
-    sBattleBuffersTransferData[3] = (stringID & 0xFF00) >> 8;
+    sBattleBuffersTransferData[2] = stringId;
+    sBattleBuffersTransferData[3] = (stringId & 0xFF00) >> 8;
 
     stringInfo = (struct BattleMsgData *)(&sBattleBuffersTransferData[4]);
     stringInfo->currentMove = gCurrentMove;
@@ -1210,17 +1215,17 @@ void BtlController_EmitYesNoBox(u8 bufferId)
     PrepareBufferDataTransfer(bufferId, sBattleBuffersTransferData, 4);
 }
 
-void BtlController_EmitChooseMove(u8 bufferId, bool8 isDoubleBattle, bool8 NoPpNumber, struct ChooseMoveStruct *movePpData)
+void BtlController_EmitChooseMove(u8 bufferId, bool8 isDoubleBattle, bool8 noPPNumber, struct ChooseMoveStruct *movePPData)
 {
     s32 i;
 
     sBattleBuffersTransferData[0] = CONTROLLER_CHOOSEMOVE;
     sBattleBuffersTransferData[1] = isDoubleBattle;
-    sBattleBuffersTransferData[2] = NoPpNumber;
+    sBattleBuffersTransferData[2] = noPPNumber;
     sBattleBuffersTransferData[3] = 0;
-    for (i = 0; i < sizeof(*movePpData); i++)
-        sBattleBuffersTransferData[4 + i] = *((u8 *)(movePpData) + i);
-    PrepareBufferDataTransfer(bufferId, sBattleBuffersTransferData, sizeof(*movePpData) + 4);
+    for (i = 0; i < sizeof(*movePPData); i++)
+        sBattleBuffersTransferData[4 + i] = *((u8 *)(movePPData) + i);
+    PrepareBufferDataTransfer(bufferId, sBattleBuffersTransferData, sizeof(*movePPData) + 4);
 }
 
 void BtlController_EmitChooseItem(u8 bufferId, u8 *battlePartyOrder)
@@ -1496,7 +1501,7 @@ void BtlController_EmitIntroTrainerBallThrow(u8 bufferId)
     PrepareBufferDataTransfer(bufferId, sBattleBuffersTransferData, 4);
 }
 
-void BtlController_EmitDrawPartyStatusSummary(u8 bufferId, struct HpAndStatus* hpAndStatus, u8 flags)
+void BtlController_EmitDrawPartyStatusSummary(u8 bufferId, struct HpAndStatus *hpAndStatus, u8 flags)
 {
     s32 i;
 

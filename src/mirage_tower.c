@@ -72,12 +72,12 @@ static void Task_FossilFallAndSink(u8);
 static void SpriteCB_FallingFossil(struct Sprite *);
 static void UpdateDisintegrationEffect(u8 *, u16, u8, u8, u8);
 
-static const ALIGNED(2) u8 sMirageTower_Gfx[] = INCBIN_U8("graphics/misc/mirage_tower.4bpp");
+static const ALIGNED(2) u8 sMirageTower_Gfx[] = INCGFX_U8("graphics/misc/mirage_tower.png", ".4bpp", "-num_tiles 73 -Wnum_tiles");
 static const u16 sMirageTowerTilemap[] = INCBIN_U16("graphics/misc/mirage_tower.bin");
-static const u16 sFossil_Pal[] = INCBIN_U16("graphics/object_events/pics/misc/fossil.gbapal"); // Unused
-static const u8 sFossil_Gfx[] = INCBIN_U8("graphics/object_events/pics/misc/fossil.4bpp"); // Duplicate of gObjectEventPic_Fossil
-static const u8 sMirageTowerCrumbles_Gfx[] = INCBIN_U8("graphics/misc/mirage_tower_crumbles.4bpp");
-static const u16 sMirageTowerCrumbles_Palette[] = INCBIN_U16("graphics/misc/mirage_tower_crumbles.gbapal");
+static const u16 sFossil_Pal[] = INCGFX_U16("graphics/object_events/pics/misc/fossil.png", ".gbapal"); // Unused
+static const u8 sFossil_Gfx[] = INCGFX_U8("graphics/object_events/pics/misc/fossil.png", ".4bpp"); // Duplicate of gObjectEventPic_Fossil
+static const u8 sMirageTowerCrumbles_Gfx[] = INCGFX_U8("graphics/misc/mirage_tower_crumbles.png", ".4bpp");
+static const u16 sMirageTowerCrumbles_Palette[] = INCGFX_U16("graphics/misc/mirage_tower_crumbles.png", ".gbapal");
 
 static const s16 sCeilingCrumblePositions[][3] =
 {
@@ -261,7 +261,7 @@ static u16 sDebug_DisintegrationData[8];
 
 bool8 IsMirageTowerVisible(void)
 {
-    if (!(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(ROUTE111) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(ROUTE111)))
+    if (!(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE111) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE111)))
         return FALSE;
     return FlagGet(FLAG_MIRAGE_TOWER_VISIBLE);
 }
@@ -284,8 +284,8 @@ void TryStartMirageTowerPulseBlendEffect(void)
         return;
     }
 
-    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(ROUTE111)
-     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(ROUTE111)
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_ROUTE111)
+     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_ROUTE111)
      || !FlagGet(FLAG_MIRAGE_TOWER_VISIBLE))
         return;
 
@@ -298,8 +298,8 @@ void TryStartMirageTowerPulseBlendEffect(void)
 
 void ClearMirageTowerPulseBlendEffect(void)
 {
-    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(ROUTE111)
-     || gSaveBlock1Ptr->location.mapNum   != MAP_NUM(ROUTE111)
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_ROUTE111)
+     || gSaveBlock1Ptr->location.mapNum   != MAP_NUM(MAP_ROUTE111)
      || !FlagGet(FLAG_MIRAGE_TOWER_VISIBLE)
      || sMirageTowerPulseBlend == NULL)
         return;

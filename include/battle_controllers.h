@@ -165,7 +165,7 @@ struct HpAndStatus
     u32 status;
 };
 
-struct MovePpInfo
+struct MovePPInfo
 {
     u16 moves[MAX_MON_MOVES];
     u8 pp[MAX_MON_MOVES];
@@ -175,8 +175,8 @@ struct MovePpInfo
 struct ChooseMoveStruct
 {
     u16 moves[MAX_MON_MOVES];
-    u8 currentPp[MAX_MON_MOVES];
-    u8 maxPp[MAX_MON_MOVES];
+    u8 currentPP[MAX_MON_MOVES];
+    u8 maxPP[MAX_MON_MOVES];
     u16 species;
     u8 monTypes[2];
 };
@@ -269,7 +269,7 @@ void BtlController_EmitPrintString(u8 bufferId, u16 stringId);
 void BtlController_EmitPrintSelectionString(u8 bufferId, u16 stringId);
 void BtlController_EmitChooseAction(u8 bufferId, u8 action, u16 itemId);
 void BtlController_EmitYesNoBox(u8 bufferId);
-void BtlController_EmitChooseMove(u8 bufferId, bool8 isDoubleBattle, bool8 NoPpNumber, struct ChooseMoveStruct *movePpData);
+void BtlController_EmitChooseMove(u8 bufferId, bool8 isDoubleBattle, bool8 noPPNumber, struct ChooseMoveStruct *movePPData);
 void BtlController_EmitChooseItem(u8 bufferId, u8 *battlePartyOrder);
 void BtlController_EmitChoosePokemon(u8 bufferId, u8 caseId, u8 slotId, u8 abilityId, u8 *data);
 void BtlController_EmitHealthBarUpdate(u8 bufferId, u16 hpValue);
@@ -288,7 +288,7 @@ void BtlController_EmitPlayFanfareOrBGM(u8 bufferId, u16 songId, bool8 playBGM);
 void BtlController_EmitFaintingCry(u8 bufferId);
 void BtlController_EmitIntroSlide(u8 bufferId, u8 environmentId);
 void BtlController_EmitIntroTrainerBallThrow(u8 bufferId);
-void BtlController_EmitDrawPartyStatusSummary(u8 bufferId, struct HpAndStatus* hpAndStatus, u8 flags);
+void BtlController_EmitDrawPartyStatusSummary(u8 bufferId, struct HpAndStatus *hpAndStatus, u8 flags);
 void BtlController_EmitHidePartyStatusSummary(u8 bufferId);
 void BtlController_EmitEndBounceEffect(u8 bufferId);
 void BtlController_EmitSpriteInvisibility(u8 bufferId, bool8 isInvisible);
@@ -306,8 +306,8 @@ void SpriteCB_FreePlayerSpriteLoadMonSprite(struct Sprite *sprite);
 void CB2_SetUpReshowBattleScreenAfterMenu(void);
 void CB2_SetUpReshowBattleScreenAfterMenu2(void);
 void Task_PlayerController_RestoreBgmAfterCry(u8 taskId);
-void ActionSelectionCreateCursorAt(u8 cursorPos, u8 unused);
-void ActionSelectionDestroyCursorAt(u8 cursorPos);
+void ActionSelectionCreateCursorAt(u8 cursorPosition, u8 baseTileNum);
+void ActionSelectionDestroyCursorAt(u8 cursorPosition);
 void InitMoveSelectionsVarsAndStrings(void);
 
 // recorded player controller

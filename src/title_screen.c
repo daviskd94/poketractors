@@ -819,7 +819,7 @@ static void Task_TitleScreenPhase3(u8 taskId)
         UpdateLegendaryMarkingColor(gTasks[taskId].tCounter);
         if ((gMPlayInfo_BGM.status & 0xFFFF) == 0)
         {
-            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_WHITEALPHA);
+            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK); //changed from RGB_WHITEALPHA to RGB_BLACK to avoid white flash when copyright screen is shown
             SetMainCallback2(CB2_GoToCopyrightScreen);
         }
     }

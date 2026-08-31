@@ -28,6 +28,7 @@
 #include "menu.h"
 #include "menu_helpers.h"
 #include "menu_specialized.h"
+#include "ow_abilities.h"
 #include "trig.h"
 #include "mon_markings.h"
 #include "move_relearner.h"
@@ -3855,7 +3856,7 @@ static void PrintEggStepsRemaining(void)
     #endif
 
     // Handle fast-hatching abilities like Flame Body, etc.
-    u8 cyclesToSubtract = GetEggCyclesToSubtract();
+    u8 cyclesToSubtract = DoesPartyHaveIncubatorMon() ? 2 : 1;
     u32 stepsRemaining;
 
     // Calculate how many actual step cycles are needed

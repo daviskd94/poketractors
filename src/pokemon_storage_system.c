@@ -1673,11 +1673,11 @@ bool8 PokemonPC_HasReturnToPartyCallback(void)
 }
 void ShowPokemonPCFromParty(void)
 {
-    /*if (SWSH_STORAGE_SYSTEM)
+    if (SWSH_STORAGE_SYSTEM)
     {
         ShowPokemonPCFromParty_SwSh();
         return;
-    }*/
+    }
     EnterPokeStorage(OPTION_MOVE_MONS);
 }
 

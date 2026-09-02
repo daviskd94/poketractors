@@ -51,35 +51,35 @@
 
 #else
 
-#define FLAG_UNUSED_0x020    0x20 // Unused Flag
-#define FLAG_UNUSED_0x021    0x21 // Unused Flag
-#define FLAG_UNUSED_0x022    0x22 // Unused Flag
-#define FLAG_UNUSED_0x023    0x23 // Unused Flag
-#define FLAG_UNUSED_0x024    0x24 // Unused Flag
-#define FLAG_UNUSED_0x025    0x25 // Unused Flag
-#define FLAG_UNUSED_0x026    0x26 // Unused Flag
-#define FLAG_UNUSED_0x027    0x27 // Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
-#define FLAG_UNUSED_0x029    0x29 // Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
-#define FLAG_UNUSED_0x032    0x32 // Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
+#define FLAG_HIDE_TRACIE                        0x20 // Flag used to hide Tracie
+#define FLAG_TAKE_EEVEE                         0x21 // Flag for taking Eevee
+#define FLAG_DORM_TRASH                         0x22 // Flag for finding an Oran Berry in the trash
+#define FLAG_HIDE_TRACIEROTCART                 0x23 // Flag for hiding Tracie and Rotcart upon leaving your dorm
+#define FLAG_HIDE_MEOWTHS                       0x24 // Unused Flag
+#define FLAG_HIDE_SOUTH_CAMPUS_TRAINERS         0x25 // Unused Flag
+#define FLAG_SPAWN_INVISIBLE                    0x26 // Unused Flag
+#define FLAG_NORTH_CAMPUS_TRACIE_1              0x27 // Unused Flag
+#define FLAG_NORTH_CAMPUS_CATCHING_PROFESSOR    0x28 // Flag used to control Professor Aspen's visibility
+#define FLAG_HIDE_TRACIE_CYRUS                  0x29 // Flag used to hide Tracie and Cyrus before and after their cutscene in North Campus
+#define FLAG_POKEBALLS_UNLOCKED                 0x2A // Flag used to control the availability of Pokeballs in the Pokemart
+#define FLAG_HIDE_LECTURE_HALL_STUDENTS         0x2B // Flag used to hide the students after the first Lecture Hall cutscene
+#define FLAG_HIDE_GYMNASIUM_TRACIE_COLTON       0x2C // Flag used to hide Tracie and Colton when they walk to their battle
+#define FLAG_HIDE_GYMNASIUM_STUDENTS            0x2D // Flag to control the visibility of Gymnasium students
+#define FLAG_HIDE_COACH_CEDAR                   0x2E // Flag to hide Coach Cedar from blocking the Gym entrance
+#define FLAG_FIELDSTONE_CAVERN_ENTER            0x2F // Flag that gets set to allow you to enter the Fieldstone Cavern
+#define FLAG_HIDE_PROFESSOR_HANZNEESTOZ         0x30 // Unused Flag
+#define FLAG_POST_PROFESSOR_HANZNEESTOZ         0x31 // Unused Flag
+#define FLAG_HIDE_TRACIE_LECTURE_HALL           0x32 // Unused Flag
+#define FLAG_HIDE_MARIO_MAPLE_LECTURE_HALL      0x33 // Unused Flag
+#define FLAG_HIDE_ROUTE_1_BOAT                  0x34 // Unused Flag
+#define FLAG_HIDE_ROUTE_1_NPCS                  0x35 // Unused Flag
+#define FLAG_HIDE_ROUTE_1_GRUNT_AND_CYRUS       0x36 // Unused Flag
+#define FLAG_HIDE_ROUTE_1_MARIO_AND_MAPLE       0x37 // Unused Flag
+#define FLAG_HIDE_ROUTE_1_ROTCART               0x38 // Unused Flag
+#define FLAG_DEFEATED_ORTHOC_MAIN_HALL          0x39 // Unused Flag
+#define FLAG_SHOW_GYM_NPCS                      0x3A // Unused Flag
+#define FLAG_DEFEATED_MARCIE_MAIN_HALL          0x3B // Unused Flag
+#define FLAG_DEFEATED_LYSSA_MAIN_HALL           0x3C // Unused Flag
 #define FLAG_UNUSED_0x03D    0x3D // Unused Flag
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag

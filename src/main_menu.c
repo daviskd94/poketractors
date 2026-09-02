@@ -480,49 +480,49 @@ static const struct MenuAction sMenuActions_Gender[] = {
 };
 
 static const u8 *const sMalePresetNames[] = {
-    COMPOUND_STRING("STU"),
-    COMPOUND_STRING("MILTON"),
-    COMPOUND_STRING("TOM"),
-    COMPOUND_STRING("KENNY"),
-    COMPOUND_STRING("REID"),
-    COMPOUND_STRING("JUDE"),
-    COMPOUND_STRING("JAXSON"),
-    COMPOUND_STRING("EASTON"),
-    COMPOUND_STRING("WALKER"),
-    COMPOUND_STRING("TERU"),
-    COMPOUND_STRING("JOHNNY"),
-    COMPOUND_STRING("BRETT"),
-    COMPOUND_STRING("SETH"),
-    COMPOUND_STRING("TERRY"),
-    COMPOUND_STRING("CASEY"),
-    COMPOUND_STRING("DARREN"),
-    COMPOUND_STRING("LANDON"),
-    COMPOUND_STRING("COLLIN"),
-    COMPOUND_STRING("STANLEY"),
-    COMPOUND_STRING("QUINCY")
+    COMPOUND_STRING("Stu"),
+    COMPOUND_STRING("Milton"),
+    COMPOUND_STRING("Tom"),
+    COMPOUND_STRING("Kenny"),
+    COMPOUND_STRING("Reid"),
+    COMPOUND_STRING("Jude"),
+    COMPOUND_STRING("Jaxson"),
+    COMPOUND_STRING("James"),
+    COMPOUND_STRING("Walker"),
+    COMPOUND_STRING("Teru"),
+    COMPOUND_STRING("Tim"),
+    COMPOUND_STRING("Brett"),
+    COMPOUND_STRING("Seth"),
+    COMPOUND_STRING("Terry"),
+    COMPOUND_STRING("Casey"),
+    COMPOUND_STRING("Darren"),
+    COMPOUND_STRING("Landon"),
+    COMPOUND_STRING("Collin"),
+    COMPOUND_STRING("Stanley"),
+    COMPOUND_STRING("Quincy")
 };
 
 static const u8 *const sFemalePresetNames[] = {
-    COMPOUND_STRING("KIMMY"),
-    COMPOUND_STRING("TIARA"),
-    COMPOUND_STRING("BELLA"),
-    COMPOUND_STRING("JAYLA"),
-    COMPOUND_STRING("ALLIE"),
-    COMPOUND_STRING("LIANNA"),
-    COMPOUND_STRING("SARA"),
-    COMPOUND_STRING("MONICA"),
-    COMPOUND_STRING("CAMILA"),
-    COMPOUND_STRING("AUBREE"),
-    COMPOUND_STRING("RUTHIE"),
-    COMPOUND_STRING("HAZEL"),
-    COMPOUND_STRING("NADINE"),
-    COMPOUND_STRING("TANJA"),
-    COMPOUND_STRING("YASMIN"),
-    COMPOUND_STRING("NICOLA"),
-    COMPOUND_STRING("LILLIE"),
-    COMPOUND_STRING("TERRA"),
-    COMPOUND_STRING("LUCY"),
-    COMPOUND_STRING("HALIE")
+    COMPOUND_STRING("Kimmy"),
+    COMPOUND_STRING("Tiara"),
+    COMPOUND_STRING("Belle"),
+    COMPOUND_STRING("Jayla"),
+    COMPOUND_STRING("Allie"),
+    COMPOUND_STRING("Lianna"),
+    COMPOUND_STRING("Sara"),
+    COMPOUND_STRING("Monica"),
+    COMPOUND_STRING("Camila"),
+    COMPOUND_STRING("Aubree"),
+    COMPOUND_STRING("Ruthie"),
+    COMPOUND_STRING("Hazel"),
+    COMPOUND_STRING("Lindsey"),
+    COMPOUND_STRING("Tanja"),
+    COMPOUND_STRING("Noelle"),
+    COMPOUND_STRING("Maggie"),
+    COMPOUND_STRING("Lillie"),
+    COMPOUND_STRING("Terra"),
+    COMPOUND_STRING("Lucy"),
+    COMPOUND_STRING("Halie")
 };
 
 // The number of male vs. female names is assumed to be the same.
@@ -1356,10 +1356,10 @@ void CB2_NewGameBirchSpeech_FromNewMainMenu(void) // Combination of the Above fu
     DmaFill32(3, 0, OAM, OAM_SIZE);
     DmaFill16(3, 0, PLTT, PLTT_SIZE);
     ResetPaletteFade();
-    LZ77UnCompVram(sBirchSpeechShadowGfx, (u8 *)VRAM);
-    LZ77UnCompVram(sBirchSpeechBgMap, (u8 *)(BG_SCREEN_ADDR(7)));
+    DecompressDataWithHeaderVram(sBirchSpeechShadowGfx, (void *)VRAM);
+    DecompressDataWithHeaderVram(sBirchSpeechBgMap, (void *)(BG_SCREEN_ADDR(7)));
     LoadPalette(sBirchSpeechBgPals, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
-    //LoadPalette(sBirchSpeechPlatformBlackPal, BG_PLTT_ID(0) + 1, PLTT_SIZEOF(8));
+    LoadPalette(&sBirchSpeechBgGradientPal[8], BG_PLTT_ID(0) + 1, PLTT_SIZEOF(8));
     ResetTasks();
     taskId = CreateTask(Task_NewGameBirchSpeech_WaitToShowBirch, 0);
     gTasks[taskId].tBG1HOFS = 0;
@@ -1470,7 +1470,7 @@ static void Task_NewGameBirchSpeechSub_InitPokeBall(u8 taskId)
     gSprites[spriteId].invisible = FALSE;
     gSprites[spriteId].data[0] = 0;
 
-    CreatePokeballSpriteToReleaseMon(spriteId, gSprites[spriteId].oam.paletteNum, 112, 58, 0, 0, 32, PALETTES_BG, SPECIES_LOTAD);
+    CreatePokeballSpriteToReleaseMon(spriteId, gSprites[spriteId].oam.paletteNum, 112, 58, 0, 0, 32, PALETTES_BG, SPECIES_TOGEPI);
     gTasks[taskId].func = Task_NewGameBirchSpeechSub_WaitForLotad;
     gTasks[sBirchSpeechMainTaskId].tTimer = 0;
 }

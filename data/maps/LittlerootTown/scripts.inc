@@ -1985,7 +1985,7 @@ LittlerootTown_Text_GoodLuckCatchingPokemon:
 # 993 "data/maps/LittlerootTown/scripts.pory"
 LittlerootTown_Text_TownSign:
 # 994 "data/maps/LittlerootTown/scripts.pory"
-	.string "BUTT TOWN\n"
+	.string "LITTLEROOT TOWN\n"
 # 995 "data/maps/LittlerootTown/scripts.pory"
 	.string "“A town that can't be shaded any hue.”$"
 # 996 "data/maps/LittlerootTown/scripts.pory"
@@ -2028,3 +2028,9 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 # 1015 "data/maps/LittlerootTown/scripts.pory"
 	.string "Let's go to my LAB.$"
+
+TestScript::
+# 1019 "data/maps/LittlerootTown/scripts.pory"
+	setflag FLAG_SYS_QUEST_MENU_GET
+	return
+

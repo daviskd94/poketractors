@@ -39,6 +39,7 @@
 #include "palette.h"
 #include "party_menu.h"
 #include "pokedex.h"
+#include "quests.h"
 #include "rtc.h"
 #include "safari_zone.h"
 #include "save_dialog.h"
@@ -73,6 +74,7 @@ enum Usm_IconTiletags {
     USM_TILETAG_RETIRE,
     USM_TILETAG_DEBUG,
     USM_TILETAG_HAND,
+    USM_TILETAG_QUEST,
 };
 
 enum Usm_Paltags {
@@ -128,6 +130,7 @@ static const u32 sPokedexIconGfx[] = INCBIN_U32("graphics/unbound_start_menu/spr
 static const u32 sPartyIconGfx[] = INCBIN_U32("graphics/unbound_start_menu/sprites/party.4bpp.smol");
 static const u32 sBagIconGfx[] = INCBIN_U32("graphics/unbound_start_menu/sprites/bag.4bpp.smol");
 static const u32 sPokenavIconGfx[] = INCBIN_U32("graphics/unbound_start_menu/sprites/pokenav.4bpp.smol");
+static const u32 sQuestIconGfx[] = INCBIN_U32("graphics/unbound_start_menu/sprites/quest.4bpp.smol");
 static const u32 sTrainerIconGfx[] = INCBIN_U32("graphics/unbound_start_menu/sprites/trainer.4bpp.smol");
 static const u32 sSaveIconGfx[] = INCBIN_U32("graphics/unbound_start_menu/sprites/save.4bpp.smol");
 static const u32 sOptionsIconGfx[] = INCBIN_U32("graphics/unbound_start_menu/sprites/options.4bpp.smol");
@@ -232,6 +235,7 @@ ICON_TEMPLATE(SAVE, Save)
 ICON_TEMPLATE(OPTIONS, Options)
 ICON_TEMPLATE(DEBUG, Debug)
 ICON_TEMPLATE(RETIRE, Retire)
+ICON_TEMPLATE(QUEST, Quest)
 
 static const struct SpritePalette sSpritePalette_Icons = {.data = sIconPal, .tag = USM_PALTAG_ICON};
 
@@ -297,6 +301,7 @@ static bool8 StartMenuBattlePyramidRetireCallback(void);
 static bool8 StartMenuBattlePyramidBagCallback(void);
 static bool8 StartMenuDebugCallback(void);
 static bool8 StartMenuDexNavCallback(void);
+static bool8 StartMenuQuestCallback(void);
 
 static const struct Usm_MenuItem sUsmMenuItems[USM_ICO_COUNT] = {
     [USM_ICO_POKEDEX] =
@@ -340,7 +345,7 @@ static const struct Usm_MenuItem sUsmMenuItems[USM_ICO_COUNT] = {
             .iconId = USM_ICO_TRAINER,
             .template = &sSpriteTemplate_Trainer,
             .sheet = &sSpriteSheet_Trainer,
-            .label = COMPOUND_STRING("Trainer"),
+            .label = COMPOUND_STRING("Student ID"),
             .shouldFade = TRUE,
             .callback = StartMenuPlayerNameCallback,
         },
@@ -388,6 +393,15 @@ static const struct Usm_MenuItem sUsmMenuItems[USM_ICO_COUNT] = {
             .label = COMPOUND_STRING("Retire"),
             .shouldFade = FALSE,
             .callback = StartMenuBattlePyramidRetireCallback,
+        },
+    [USM_ICO_QUEST_MENU] =
+        {
+            .iconId = USM_ICO_QUEST_MENU,
+            .template = &sSpriteTemplate_Quest,
+            .sheet = &sSpriteSheet_Quest,
+            .label = COMPOUND_STRING("Quest Log"),
+            .shouldFade = TRUE,
+            .callback = StartMenuQuestCallback,
         },
 };
 
@@ -554,6 +568,12 @@ return TRUE;
 static bool8 UNUSED StartMenuDexNavCallback(void)
 {
     return FALSE;
+}
+
+static bool8 StartMenuQuestCallback(void)
+{
+    CreateTask(Task_QuestMenu_OpenFromStartMenu, 0);
+    return TRUE;
 }
 
 void Usm_InitStartMenu(void)
@@ -795,6 +815,7 @@ static bool32 Usm_IsItemAvailable(enum Usm_Icons item)
         case USM_ICO_SAFARI_RETIRE: return FALSE;
         case USM_ICO_DEBUG: return (DEBUG_OVERWORLD_MENU && DEBUG_OVERWORLD_IN_MENU);
         default: return TRUE;
+        case USM_ICO_QUEST_MENU: return FlagGet(FLAG_SYS_QUEST_MENU_GET);
     }
 
 }
@@ -813,6 +834,9 @@ static void Usm_BuildDefaultMenuItems(void)
 
     if (FlagGet(FLAG_SYS_POKENAV_GET))
         Usm_AddMenuItem(USM_ICO_POKENAV);
+
+    if (FlagGet(FLAG_SYS_QUEST_MENU_GET))
+    Usm_AddMenuItem(USM_ICO_QUEST_MENU);
 
     Usm_AddMenuItem(USM_ICO_TRAINER);
     Usm_AddMenuItem(USM_ICO_SAVE);
@@ -971,8 +995,8 @@ static void Usm_SaveItems(void)
 
     u8 count = sUsmState->itemCount;
 
-    if (count > USM_ICO_COUNT)
-        count = USM_ICO_COUNT;
+    if (count > USM_SAVED_ICON_CAPACITY)
+        count = USM_SAVED_ICON_CAPACITY;
 
     saved->count = count;
 

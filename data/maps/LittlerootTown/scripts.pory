@@ -1015,3 +1015,6 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "Let's go to my LAB.$"
 
 `
+script TestScript {
+    setflag(FLAG_SYS_QUEST_MENU_GET)
+}

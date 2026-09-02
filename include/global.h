@@ -256,7 +256,7 @@ struct NPCFollower
 #define ITEM_FLAGS_COUNT ((ITEMS_COUNT / 8) + ((ITEMS_COUNT % 8) ? 1 : 0))
 
 struct PACKED Usm_SavedItems {
-    u8 items[USM_ICO_COUNT];
+    u8 items[USM_SAVED_ICON_CAPACITY];
     u8 count;
 };
 

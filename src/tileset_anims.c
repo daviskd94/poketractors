@@ -631,7 +631,7 @@ void InitTilesetAnim_Building(void)
 
 static void TilesetAnim_General(u16 timer)
 {
-    if (timer % 16 == 0)
+   /* if (timer % 16 == 0)
         QueueAnimTiles_General_Flower(timer / 16);
     if (timer % 16 == 1)
         QueueAnimTiles_General_Water(timer / 16);
@@ -640,7 +640,7 @@ static void TilesetAnim_General(u16 timer)
     if (timer % 16 == 3)
         QueueAnimTiles_General_Waterfall(timer / 16);
     if (timer % 16 == 4)
-        QueueAnimTiles_General_LandWaterEdge(timer / 16);
+        QueueAnimTiles_General_LandWaterEdge(timer / 16);*/
 }
 
 static void TilesetAnim_Building(u16 timer)
@@ -648,7 +648,7 @@ static void TilesetAnim_Building(u16 timer)
     if (timer % 8 == 0)
         QueueAnimTiles_Building_TVTurnedOn(timer / 8);
 }
-
+/*
 static void QueueAnimTiles_General_Flower(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_General_Flower);
@@ -672,7 +672,7 @@ static void QueueAnimTiles_General_Waterfall(u16 timer)
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_General_Waterfall);
     AppendTilesetAnimToBuffer(gTilesetAnims_General_Waterfall[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(496)), 6 * TILE_SIZE_4BPP);
 }
-
+*/
 void InitTilesetAnim_Petalburg(void)
 {
     sSecondaryTilesetAnimCounter = 0;
@@ -859,8 +859,8 @@ static void TilesetAnim_Rustboro(u16 timer)
 
 static void TilesetAnim_Dewford(u16 timer)
 {
-    if (timer % 8 == 0)
-        QueueAnimTiles_Dewford_Flag(timer / 8);
+    /*if (timer % 8 == 0)
+        QueueAnimTiles_Dewford_Flag(timer / 8);*/
 }
 
 static void TilesetAnim_Slateport(u16 timer)

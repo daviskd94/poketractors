@@ -9323,6 +9323,26 @@
       "border_height": 2,
       "border_width": 2,
       "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_SOUTH_CAMPUS",
+      "name": "SouthCampus_Layout",
+      "width": 70,
+      "height": 70,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/SouthCampus/border.bin",
+      "blockdata_filepath": "data/layouts/SouthCampus/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOUTH_CAMPUS_PLAYER_DORM",
+      "name": "SouthCampus_PlayerDorm_Layout",
+      "width": 29,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/SouthCampus_PlayerDorm/border.bin",
+      "blockdata_filepath": "data/layouts/SouthCampus_PlayerDorm/map.bin"
     }
   ]
 }

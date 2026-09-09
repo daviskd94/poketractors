@@ -833,6 +833,149 @@ const struct Tileset gTileset_UnionRoom =
     .callback = NULL,
 };
 
+const struct Tileset gTileset_GrayCave =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_GrayCave,
+    .palettes = gTilesetPalettes_GrayCave,
+    .metatiles = gMetatiles_GrayCave,
+    .metatileAttributes = gMetatileAttributes_GrayCave,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_DormHallway =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_DormHallway,
+    .palettes = gTilesetPalettes_DormHallway,
+    .metatiles = gMetatiles_DormHallway,
+    .metatileAttributes = gMetatileAttributes_DormHallway,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_SouthCampusCafeteria =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SouthCampusCafeteria,
+    .palettes = gTilesetPalettes_SouthCampusCafeteria,
+    .metatiles = gMetatiles_SouthCampusCafeteria,
+    .metatileAttributes = gMetatileAttributes_SouthCampusCafeteria,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_TractorUniversity =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_TractorUniversity,
+    .palettes = gTilesetPalettes_TractorUniversity,
+    .metatiles = gMetatiles_TractorUniversity,
+    .metatileAttributes = gMetatileAttributes_TractorUniversity,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Classroom =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Classroom,
+    .palettes = gTilesetPalettes_Classroom,
+    .metatiles = gMetatiles_Classroom,
+    .metatileAttributes = gMetatileAttributes_Classroom,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_MainHall =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_MainHall,
+    .palettes = gTilesetPalettes_MainHall,
+    .metatiles = gMetatiles_MainHall,
+    .metatileAttributes = gMetatileAttributes_MainHall,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_New_Cave =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_New_Cave,
+    .palettes = gTilesetPalettes_New_Cave,
+    .metatiles = gMetatiles_New_Cave,
+    .metatileAttributes = gMetatileAttributes_New_Cave,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_LectureHall =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_LectureHall,
+    .palettes = gTilesetPalettes_LectureHall,
+    .metatiles = gMetatiles_LectureHall,
+    .metatileAttributes = gMetatileAttributes_LectureHall,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_NorthCampusGymnasium =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_NorthCampusGymnasium,
+    .palettes = gTilesetPalettes_NorthCampusGymnasium,
+    .metatiles = gMetatiles_NorthCampusGymnasium,
+    .metatileAttributes = gMetatileAttributes_NorthCampusGymnasium,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Library =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Library,
+    .palettes = gTilesetPalettes_Library,
+    .metatiles = gMetatiles_Library,
+    .metatileAttributes = gMetatileAttributes_Library,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Laboratory =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Laboratory,
+    .palettes = gTilesetPalettes_Laboratory,
+    .metatiles = gMetatiles_Laboratory,
+    .metatileAttributes = gMetatileAttributes_Laboratory,
+    .callback = InitTilesetAnim_Laboratory,
+};
+
+const struct Tileset gTileset_FossilLab =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_FossilLab,
+    .palettes = gTilesetPalettes_FossilLab,
+    .metatiles = gMetatiles_FossilLab,
+    .metatileAttributes = gMetatileAttributes_FossilLab,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_SS_Tractoria =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SS_Tractoria,
+    .palettes = gTilesetPalettes_SS_Tractoria,
+    .metatiles = gMetatiles_SS_Tractoria,
+    .metatileAttributes = gMetatileAttributes_SS_Tractoria,
+    .callback = NULL,
+};
+
 #else
 
 // FRLG tilesets

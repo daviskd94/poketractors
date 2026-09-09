@@ -1630,6 +1630,14 @@
     {
       "id": "MAPSEC_SOUTH_CAMPUS",
       "name": "South Campus"
+    },
+    {
+      "id": "MAPSEC_ROUTE_1_NEW",
+      "name": "Route 1"
+    },
+    {
+      "id": "MAPSEC_NORTH_CAMPUS",
+      "name": "North Campus"
     }
   ]
 }

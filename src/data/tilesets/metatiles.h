@@ -210,6 +210,45 @@ const u16 gMetatileAttributes_MysteryEventsHouse[] = INCBIN_U16("data/tilesets/s
 const u16 gMetatiles_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatiles.bin");
 const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/union_room/metatile_attributes.bin");
 
+const u16 gMetatiles_GrayCave[] = INCBIN_U16("data/tilesets/secondary/gray_cave/metatiles.bin");
+const u16 gMetatileAttributes_GrayCave[] = INCBIN_U16("data/tilesets/secondary/gray_cave/metatile_attributes.bin");
+
+const u16 gMetatiles_DormHallway[] = INCBIN_U16("data/tilesets/secondary/dorm_hallway/metatiles.bin");
+const u16 gMetatileAttributes_DormHallway[] = INCBIN_U16("data/tilesets/secondary/dorm_hallway/metatile_attributes.bin");
+
+const u16 gMetatiles_SouthCampusCafeteria[] = INCBIN_U16("data/tilesets/secondary/south_campus_cafeteria/metatiles.bin");
+const u16 gMetatileAttributes_SouthCampusCafeteria[] = INCBIN_U16("data/tilesets/secondary/south_campus_cafeteria/metatile_attributes.bin");
+
+const u16 gMetatiles_TractorUniversity[] = INCBIN_U16("data/tilesets/secondary/tractor_university/metatiles.bin");
+const u16 gMetatileAttributes_TractorUniversity[] = INCBIN_U16("data/tilesets/secondary/tractor_university/metatile_attributes.bin");
+
+const u16 gMetatiles_Classroom[] = INCBIN_U16("data/tilesets/secondary/classroom/metatiles.bin");
+const u16 gMetatileAttributes_Classroom[] = INCBIN_U16("data/tilesets/secondary/classroom/metatile_attributes.bin");
+
+const u16 gMetatiles_MainHall[] = INCBIN_U16("data/tilesets/secondary/main_hall/metatiles.bin");
+const u16 gMetatileAttributes_MainHall[] = INCBIN_U16("data/tilesets/secondary/main_hall/metatile_attributes.bin");
+
+const u16 gMetatiles_New_Cave[] = INCBIN_U16("data/tilesets/secondary/new_cave/metatiles.bin");
+const u16 gMetatileAttributes_New_Cave[] = INCBIN_U16("data/tilesets/secondary/new_cave/metatile_attributes.bin");
+
+const u16 gMetatiles_LectureHall[] = INCBIN_U16("data/tilesets/secondary/lecture_hall/metatiles.bin");
+const u16 gMetatileAttributes_LectureHall[] = INCBIN_U16("data/tilesets/secondary/lecture_hall/metatile_attributes.bin");
+
+const u16 gMetatiles_NorthCampusGymnasium[] = INCBIN_U16("data/tilesets/secondary/north_campus_gymnasium/metatiles.bin");
+const u16 gMetatileAttributes_NorthCampusGymnasium[] = INCBIN_U16("data/tilesets/secondary/north_campus_gymnasium/metatile_attributes.bin");
+
+const u16 gMetatiles_Library[] = INCBIN_U16("data/tilesets/secondary/library/metatiles.bin");
+const u16 gMetatileAttributes_Library[] = INCBIN_U16("data/tilesets/secondary/library/metatile_attributes.bin");
+
+const u16 gMetatiles_Laboratory[] = INCBIN_U16("data/tilesets/secondary/laboratory/metatiles.bin");
+const u16 gMetatileAttributes_Laboratory[] = INCBIN_U16("data/tilesets/secondary/laboratory/metatile_attributes.bin");
+
+const u16 gMetatiles_FossilLab[] = INCBIN_U16("data/tilesets/secondary/fossil_lab/metatiles.bin");
+const u16 gMetatileAttributes_FossilLab[] = INCBIN_U16("data/tilesets/secondary/fossil_lab/metatile_attributes.bin");
+
+const u16 gMetatiles_SS_Tractoria[] = INCBIN_U16("data/tilesets/secondary/ss_tractoria/metatiles.bin");
+const u16 gMetatileAttributes_SS_Tractoria[] = INCBIN_U16("data/tilesets/secondary/ss_tractoria/metatile_attributes.bin");
+
 #else
 
 const u16 gMetatiles_Building_Frlg[] = INCBIN_U16("data/tilesets/primary/building_frlg/metatiles.bin");

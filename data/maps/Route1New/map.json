@@ -1,0 +1,31 @@
+{
+  "id": "MAP_ROUTE1NEW",
+  "name": "Route1New",
+  "layout": "LAYOUT_ROUTE1NEW",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_ROUTE_1_NEW",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_SOUTH_CAMPUS",
+      "offset": -18,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_NORTH_CAMPUS",
+      "offset": -4,
+      "direction": "up"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

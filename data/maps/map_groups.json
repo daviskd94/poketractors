@@ -135,7 +135,9 @@
     "Underwater_Route129",
     "Underwater_Route105",
     "Underwater_Route125",
-    "SouthCampus"
+    "SouthCampus",
+    "Route1New",
+    "NorthCampus"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -1164,6 +1166,16 @@
     "SevenIsland_SevaultCanyon_House_Frlg"
   ],
   "gMapGroup_IndoorSouthCampus": [
-    "SouthCampus_PlayerDorm"
+    "SouthCampus_PlayerDorm",
+    "SouthCampus_DormHallway",
+    "SouthCampus_TracieDorm",
+    "SouthCampus_RotcartDorm",
+    "SouthCampus_Dorm1",
+    "SouthCampus_Dorm2",
+    "SouthCampus_Dorm3",
+    "SouthCampus_DormReception",
+    "SouthCampus_PokemonCenter_1F",
+    "SouthCampus_PokemonMart",
+    "SouthCampus_Cafeteria"
   ]
 }

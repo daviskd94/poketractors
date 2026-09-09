@@ -9343,6 +9343,126 @@
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/SouthCampus_PlayerDorm/border.bin",
       "blockdata_filepath": "data/layouts/SouthCampus_PlayerDorm/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOUTH_CAMPUS_DORM_HALLWAY",
+      "name": "SouthCampus_DormHallway_Layout",
+      "width": 36,
+      "height": 25,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_DormHallway",
+      "border_filepath": "data/layouts/SouthCampus_DormHallway/border.bin",
+      "blockdata_filepath": "data/layouts/SouthCampus_DormHallway/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE1NEW",
+      "name": "Route1New_Layout",
+      "width": 60,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/Route1New/border.bin",
+      "blockdata_filepath": "data/layouts/Route1New/map.bin"
+    },
+    {
+      "id": "LAYOUT_NORTH_CAMPUS",
+      "name": "NorthCampus_Layout",
+      "width": 104,
+      "height": 60,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_TractorUniversity",
+      "border_filepath": "data/layouts/NorthCampus/border.bin",
+      "blockdata_filepath": "data/layouts/NorthCampus/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOUTH_CAMPUS_TRACIE_DORM",
+      "name": "SouthCampus_TracieDorm_Layout",
+      "width": 12,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/SouthCampus_TracieDorm/border.bin",
+      "blockdata_filepath": "data/layouts/SouthCampus_TracieDorm/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOUTH_CAMPUS_ROTCART_DORM",
+      "name": "SouthCampus_RotcartDorm_Layout",
+      "width": 12,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/SouthCampus_RotcartDorm/border.bin",
+      "blockdata_filepath": "data/layouts/SouthCampus_RotcartDorm/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOUTH_CAMPUS_DORM_RECEPTION",
+      "name": "SouthCampus_DormReception_Layout",
+      "width": 26,
+      "height": 18,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_DormHallway",
+      "border_filepath": "data/layouts/SouthCampus_DormReception/border.bin",
+      "blockdata_filepath": "data/layouts/SouthCampus_DormReception/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOUTH_CAMPUS_DORM3",
+      "name": "SouthCampus_Dorm3_Layout",
+      "width": 16,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/SouthCampus_Dorm3/border.bin",
+      "blockdata_filepath": "data/layouts/SouthCampus_Dorm3/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOUTH_CAMPUS_DORM2",
+      "name": "SouthCampus_Dorm2_Layout",
+      "width": 18,
+      "height": 16,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/SouthCampus_Dorm2/border.bin",
+      "blockdata_filepath": "data/layouts/SouthCampus_Dorm2/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOUTH_CAMPUS_DORM1",
+      "name": "SouthCampus_Dorm1_Layout",
+      "width": 18,
+      "height": 16,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/SouthCampus_Dorm1/border.bin",
+      "blockdata_filepath": "data/layouts/SouthCampus_Dorm1/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOUTH_CAMPUS_POKEMON_MART",
+      "name": "SouthCampus_PokemonMart_Layout",
+      "width": 12,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/SouthCampus_PokemonMart/border.bin",
+      "blockdata_filepath": "data/layouts/SouthCampus_PokemonMart/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOUTH_CAMPUS_POKEMON_CENTER_1F",
+      "name": "SouthCampus_PokemonCenter_1F_Layout",
+      "width": 15,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/SouthCampus_PokemonCenter_1F/border.bin",
+      "blockdata_filepath": "data/layouts/SouthCampus_PokemonCenter_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_SOUTH_CAMPUS_CAFETERIA",
+      "name": "SouthCampus_Cafeteria_Layout",
+      "width": 22,
+      "height": 15,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_SouthCampusCafeteria",
+      "border_filepath": "data/layouts/SouthCampus_Cafeteria/border.bin",
+      "blockdata_filepath": "data/layouts/SouthCampus_Cafeteria/map.bin"
     }
   ]
 }

@@ -148,6 +148,12 @@ static const u8 sDoorAnimTiles_TrainerHillLobbyElevator[] = INCGFX_U8("graphics/
 static const u16 sDoorNullPalette48[16] = {};
 static const u8 sDoorAnimTiles_TrainerHillRoofElevator[] = INCGFX_U8("graphics/door_anims/trainer_hill_roof_elevator.png", ".4bpp");
 static const u16 sDoorNullPalette49[16] = {};
+static const u8 sDoorAnimTiles_South_Campus_Dorm[] = INCBIN_U8("graphics/door_anims/south_campus_dorm.4bpp");
+static const u8 sDoorAnimTiles_DormHallway_Door[] = INCBIN_U8("graphics/door_anims/dormhallway_door.4bpp");
+static const u8 sDoorAnimTiles_Cafeteria_Door[] = INCBIN_U8("graphics/door_anims/south_campus_cafeteria.4bpp");
+static const u8 sDoorAnimTiles_NorthCampus_MainHall[] = INCBIN_U8("graphics/door_anims/north_campus_main_hall.4bpp");
+static const u8 sDoorAnimTiles_NorthCampus_MainHall_2[] = INCBIN_U8("graphics/door_anims/north_campus_main_hall_2.4bpp");
+static const u8 sDoorAnimTiles_MainHall_Classroom_Door[] = INCBIN_U8("graphics/door_anims/main_hall_classroom.4bpp");
 
 #if IS_FRLG
 
@@ -311,6 +317,12 @@ static const u8 sDoorAnimPalettes_BattleDomePreBattleRoom[] = {9, 9, 7, 7, 7, 7,
 static const u8 sDoorAnimPalettes_BattleTentInterior[] = {9, 9, 9, 9, 9, 9, 9, 9};
 static const u8 sDoorAnimPalettes_TrainerHillLobbyElevator[] = {7, 7, 7, 7, 7, 7, 7, 7};
 static const u8 sDoorAnimPalettes_TrainerHillRoofElevator[] = {9, 9, 7, 7, 7, 7, 7, 7};
+static const u8 sDoorAnimPalettes_SouthCampusDorm[] = {2, 2, 2, 2, 2, 2, 2, 2};
+static const u8 sDoorAnimPalettes_DormHallwayDoor[] = {8, 8, 10, 10, 10, 10, 10, 10};
+static const u8 sDoorAnimPalettes_SouthCampusCafeteria[] = {2, 2, 2, 2, 2, 2, 2, 2};
+static const u8 sDoorAnimPalettes_NorthCampus_MainHall[] = {10, 10, 10, 10, 10, 10, 10, 10};
+static const u8 sDoorAnimPalettes_NorthCampus_MainHall_2[] = {10, 10, 10, 10, 10, 10, 10, 10};
+static const u8 sDoorAnimPalettes_MainHall_Classroom_Door[] = {9, 9, 9, 9, 9, 9, 9, 9};
 
 #if IS_FRLG
 
@@ -774,6 +786,14 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
         .size = DOOR_SIZE_1x2,
         .tiles = sDoorAnimTiles_TrainerHillRoofElevator,
         .palettes = sDoorAnimPalettes_TrainerHillRoofElevator
+    },
+    {
+        .metatileNum = METATILE_South_Campus_Dorm_Door,
+        .tileset = &gTileset_Dewford,
+        .sound = DOOR_SOUND_NORMAL,
+        .size = DOOR_SIZE_1x2,
+        .tiles = sDoorAnimTiles_South_Campus_Dorm,
+        .palettes = sDoorAnimPalettes_SouthCampusDorm
     },
 #else
     {

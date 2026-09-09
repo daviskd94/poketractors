@@ -1105,12 +1105,11 @@ static const struct SpriteFrameImage sPicTable_Brandon[] = {
 };
 
 static const struct SpriteFrameImage sPicTable_PokeBall[] = {
-    overworld_frame(gObjectEventPic_PokeBall, 2, 4, 0),
-    overworld_frame(gObjectEventPic_PokeBall, 2, 4, 1),
-    overworld_frame(gObjectEventPic_PokeBall, 2, 4, 2),
-    overworld_frame(gObjectEventPic_PokeBall, 2, 4, 3),
-    overworld_frame(gObjectEventPic_PokeBall, 2, 4, 4),
-    overworld_frame(gObjectEventPic_PokeBall, 2, 4, 0),
+    obj_frame_tiles(gObjectEventPic_PokeBall),
+};
+
+static const struct SpriteFrameImage sPicTable_ItemBall[] = {
+    obj_frame_tiles(gObjectEventPic_ItemBall),
 };
 
 extern const struct SpriteFrameImage gFieldEffectObjectPicTable_BallLight[];
@@ -1582,6 +1581,10 @@ static const struct SpriteFrameImage sPicTable_YoungCoupleF[] = {
 
 static const struct SpriteFrameImage sPicTable_YoungCoupleM[] = {
     overworld_ascending_frames(gObjectEventPic_YoungCoupleM, 4, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Officer[] = {
+    overworld_ascending_frames(gObjectEventPic_Officer, 4, 4),
 };
 
 #if IS_FRLG

@@ -4828,7 +4828,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_FireBreather = {
     .images = sPicTable_FireBreather,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GenesisF = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GenesisFemale = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_GENESIS,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
@@ -4846,7 +4846,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GenesisF = {
     .images = sPicTable_GenesisF,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GenesisM = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GenesisMale = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_GENESIS,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
@@ -5492,6 +5492,44 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoungCoupleM = {
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
     .images = sPicTable_YoungCoupleM,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ItemBall = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_ITEM_BALL,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_NONE,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_ItemBall,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Policeman = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_OFFICER,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Officer,
+    .affineAnims = gDummySpriteAffineAnimTable,
 };
 
 #if IS_FRLG

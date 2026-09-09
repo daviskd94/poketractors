@@ -175,6 +175,11 @@
 // gTileset_Dewford
 #define METATILE_Dewford_Door              0x225
 #define METATILE_Dewford_Door_BattleTower  0x25D
+#define METATILE_Dewford_SouthCampus_Cafeteria  0x373
+#define METATILE_South_Campus_Dorm_Door        0x2CC
+
+// gTileset_DormHallway
+#define METATILE_DormHallway_SouthCampus_Door  0x2EA
 
 // gTileset_EliteFour
 #define METATILE_EliteFour_EntryDoor_ClosedBottom    0x20E

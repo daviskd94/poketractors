@@ -359,6 +359,8 @@ const u32 gObjectEventPic_Noland[] = INCGFX_U32("graphics/object_events/pics/peo
 const u32 gObjectEventPic_Lucy[] = INCGFX_U32("graphics/object_events/pics/people/frontier_brains/lucy.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gObjectEventPic_Brandon[] = INCGFX_U32("graphics/object_events/pics/people/frontier_brains/brandon.png", ".4bpp", "-mwidth 2 -mheight 4");
 const u32 gObjectEventPic_PokeBall[] = INCGFX_U32("graphics/object_events/pics/misc/ball_poke.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u32 gObjectEventPic_ItemBall[] = INCGFX_U32("graphics/object_events/pics/misc/ball_item.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u16 gObjectEventPal_ItemBall[] = INCGFX_U16("graphics/object_events/palettes/ball_item.pal", ".gbapal");
 
 // New overworlds for Pokemon Tractors
 const u32 gObjectEventPic_AceTrainerF[] = INCGFX_U32("graphics/object_events/pics/people/acetrainerfemale.png", ".4bpp", "-mwidth 4 -mheight 4");
@@ -455,6 +457,7 @@ const u32 gObjectEventPic_Worker[] = INCGFX_U32("graphics/object_events/pics/peo
 const u32 gObjectEventPic_YoungCoupleF[] = INCGFX_U32("graphics/object_events/pics/people/young_couple_f.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u32 gObjectEventPic_YoungCoupleM[] = INCGFX_U32("graphics/object_events/pics/people/young_couple_m.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u32 gObjectEventPic_Youngster[] = INCGFX_U32("graphics/object_events/pics/people/youngster.png", ".4bpp", "-mwidth 4 -mheight 4");
+const u32 gObjectEventPic_Officer[] = INCGFX_U32("graphics/object_events/pics/people/officer.png", ".4bpp", "-mwidth 4 -mheight 4");
 
 // New palettes for Pokemon Tractors
 const u16 gObjectEventPal_AceTrainer[] = INCGFX_U16("graphics/object_events/palettes/acetrainer.pal", ".gbapal");
@@ -542,6 +545,7 @@ const u16 gObjectEventPal_Waitress[] = INCGFX_U16("graphics/object_events/palett
 const u16 gObjectEventPal_Worker[] = INCGFX_U16("graphics/object_events/palettes/worker.pal", ".gbapal");
 const u16 gObjectEventPal_YoungCouple[] = INCGFX_U16("graphics/object_events/palettes/young_couple.pal", ".gbapal");
 const u16 gObjectEventPal_Youngster[] = INCGFX_U16("graphics/object_events/palettes/youngster.pal", ".gbapal");
+const u16 gObjectEventPal_Officer[] = INCGFX_U16("graphics/object_events/palettes/officer.pal", ".gbapal");
 
 const u32 gObjectEventPic_DeoxysOld[] = INCGFX_U32("graphics/object_events/pics/pokemon_old/deoxys.png", ".4bpp", "-mwidth 4 -mheight 4");
 const u32 gObjectEventPic_MewOld[] = INCGFX_U32("graphics/object_events/pics/pokemon_old/mew.png", ".4bpp", "-mwidth 2 -mheight 4");

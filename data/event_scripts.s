@@ -1743,3 +1743,27 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/SouthCampus/scripts.inc"
 
 	.include "data/maps/SouthCampus_PlayerDorm/scripts.inc"
+
+	.include "data/maps/SouthCampus_DormHallway/scripts.inc"
+
+	.include "data/maps/Route1New/scripts.inc"
+
+	.include "data/maps/NorthCampus/scripts.inc"
+
+	.include "data/maps/SouthCampus_TracieDorm/scripts.inc"
+
+	.include "data/maps/SouthCampus_RotcartDorm/scripts.inc"
+
+	.include "data/maps/SouthCampus_DormReception/scripts.inc"
+
+	.include "data/maps/SouthCampus_Dorm3/scripts.inc"
+
+	.include "data/maps/SouthCampus_Dorm2/scripts.inc"
+
+	.include "data/maps/SouthCampus_Dorm1/scripts.inc"
+
+	.include "data/maps/SouthCampus_PokemonMart/scripts.inc"
+
+	.include "data/maps/SouthCampus_PokemonCenter_1F/scripts.inc"
+
+	.include "data/maps/SouthCampus_Cafeteria/scripts.inc"

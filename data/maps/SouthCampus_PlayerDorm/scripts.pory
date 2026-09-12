@@ -7,6 +7,8 @@ mapscripts SouthCampus_PlayerDorm_MapScripts {
 
 script PlayerDorm_WakeUp {
     lockall
+    setflag(FLAG_HIDE_TRACIE)
+    removeobject(LOCALID_TRACIE)
     //call (EventScript_ResetAllMapFlags)
     delay(80)
     call (Player_Dorm_Door_Knocking)
@@ -14,11 +16,14 @@ script PlayerDorm_WakeUp {
     setspeaker(SP_NAME_UNKNOWN)
     msgbox(format("Hello…? {PLAYER}?\p{PLAYER}, are you there?"), MSGBOX_DEFAULT)
     closemessage
-    fadescreen(FADE_TO_BLACK)
+
+    delay(40)
+    //fadescreen(FADE_TO_BLACK)
     applymovement(OBJ_EVENT_ID_PLAYER, moves(slide_right*17, face_left))
     waitmovement
-    hideobjectat(LOCALID_TRACIE, MAP_SOUTH_CAMPUS_PLAYER_DORM) 
-    showobjectat(OBJ_EVENT_ID_PLAYER, MAP_SOUTH_CAMPUS_PLAYER_DORM)
+    delay(40)
+    clearflag(FLAG_HIDE_TRACIE)
+    addobject(OBJ_EVENT_ID_PLAYER, MAP_SOUTH_CAMPUS_PLAYER_DORM)
     fadescreen(FADE_FROM_BLACK)
     setflag(FLAG_SPAWN_INVISIBLE)
     delay(80)
@@ -47,9 +52,8 @@ script Player_Dorm_Door_Knocking {
 
 script Player_Dorm_Enter_Tracie {
     playse(SE_DOOR)
-    showobjectat(LOCALID_TRACIE, MAP_SOUTH_CAMPUS_PLAYER_DORM)
-    applymovement(LOCALID_TRACIE, moves(walk_up))
-    waitmovement(0)
+    applymovement(LOCALID_TRACIE, Tracie_EnterRoom)
+    waitmovement(LOCALID_TRACIE)
     applymovement(OBJ_EVENT_ID_PLAYER, moves(face_down))
     waitmovement(0)
     playbgm (MUS_LILYCOVE_MUSEUM, TRUE)
@@ -84,6 +88,11 @@ script Player_Dorm_Enter_Tracie {
     setvar(VAR_PLAYERDORM_STATE, 1)
     releaseall
     end
+}
+
+movement Tracie_EnterRoom {
+    set_visible
+    walk_up
 }
 
 movement Player_Dorm_Tracie_Approach {

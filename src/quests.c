@@ -52,6 +52,7 @@ struct QuestMenuResources
 	u8 filterMode;
 	u8 parentQuest;
 	bool8 restoreCursor;
+	bool8 filterModePreset;
 };
 
 struct QuestMenuStaticResources
@@ -984,6 +985,7 @@ void QuestMenu_Init(u8 a0, MainCallback callback)
 	sStateDataPtr->spriteIconSlot = 0;
 	sStateDataPtr->scrollIndicatorArrowPairId = 0xFF;
 	sStateDataPtr->savedCallback = 0;
+	sStateDataPtr->filterModePreset = FALSE;
 	for (i = 0; i < 3; i++)
 	{
 		sStateDataPtr->data[i] = 0;
@@ -2812,6 +2814,21 @@ void Task_QuestMenu_OpenFromStartMenu(u8 taskId)
 		QuestMenu_Init(tItemPcParam, CB2_ReturnToFieldWithOpenMenu);
 		DestroyTask(taskId);
 	}
+}
+
+void CB2_OpenQuestMenu(void)
+{
+    QuestMenu_Init(0, CB2_ReturnToFieldWithOpenMenu);
+}
+
+void QuestMenu_InitWithFilter(u8 filterMode, MainCallback callback)
+{
+    QuestMenu_Init(0, callback);
+    if (sStateDataPtr != NULL)
+    {
+        sStateDataPtr->filterMode = filterMode;
+        sStateDataPtr->filterModePreset = TRUE;
+    }
 }
 
 void QuestMenu_CopyQuestName(u8 *dst, u8 questId)

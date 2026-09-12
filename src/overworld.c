@@ -1929,6 +1929,12 @@ static bool8 RunFieldCallback(void)
     return TRUE;
 }
 
+static void FieldCB_ForceBlackScreen(void)
+{
+    BlendPalettes(PALETTES_ALL, 16, RGB(0, 0, 0));
+    gFieldCallback = NULL; 
+}
+
 void CB2_NewGame(void)
 {
     FieldClearVBlankHBlankCallbacks();
@@ -1943,7 +1949,7 @@ void CB2_NewGame(void)
         gFieldCallback = FieldCB_WarpExitFadeFromBlack;
     else
         gFieldCallback = ExecuteTruckSequence;
-    gFieldCallback2 = NULL;
+    gFieldCallback = FieldCB_ForceBlackScreen; // creating black screen
     DoMapLoadLoop(&gMain.state);
     SetFieldVBlankCallback();
     SetMainCallback1(CB1_Overworld);

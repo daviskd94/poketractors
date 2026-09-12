@@ -12,385 +12,397 @@ SouthCampus_PlayerDorm_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 PlayerDorm_WakeUp::
 # 9 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	lockall
+# 10 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	setflag FLAG_HIDE_TRACIE
 # 11 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	delay 80
-# 12 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	call Player_Dorm_Door_Knocking
+	removeobject LOCALID_TRACIE
 # 13 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	delay 40
-# 14 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	setspeaker SP_NAME_UNKNOWN
-# 15 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	msgbox PlayerDorm_WakeUp_Text_0, MSGBOX_DEFAULT
-# 16 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	closemessage
-# 17 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	fadescreen FADE_TO_BLACK
-# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PlayerDorm_WakeUp_Movement_0
-# 19 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	waitmovement
-# 20 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	hideobjectat LOCALID_TRACIE, MAP_SOUTH_CAMPUS_PLAYER_DORM
-# 21 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	showobjectat OBJ_EVENT_ID_PLAYER, MAP_SOUTH_CAMPUS_PLAYER_DORM
-# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	fadescreen FADE_FROM_BLACK
-# 23 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	setflag FLAG_SPAWN_INVISIBLE
-# 24 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	delay 80
-# 25 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 14 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	call Player_Dorm_Door_Knocking
+# 15 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	delay 40
+# 16 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	setspeaker SP_NAME_UNKNOWN
+# 17 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	msgbox PlayerDorm_WakeUp_Text_0, MSGBOX_DEFAULT
+# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	closemessage
+# 20 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	delay 40
+# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PlayerDorm_WakeUp_Movement_0
+# 23 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	waitmovement
+# 24 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	delay 40
+# 25 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	clearflag FLAG_HIDE_TRACIE
 # 26 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	delay 20
+	addobject OBJ_EVENT_ID_PLAYER, MAP_SOUTH_CAMPUS_PLAYER_DORM
 # 27 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PlayerDorm_WakeUp_Movement_1
+	fadescreen FADE_FROM_BLACK
 # 28 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	playse SE_PIN
+	setflag FLAG_SPAWN_INVISIBLE
 # 29 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	waitse
+	delay 80
 # 30 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	delay 60
+	call Player_Dorm_Door_Knocking
 # 31 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, PlayerDorm_WakeUp_Movement_2
+	delay 20
 # 32 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	playse SE_LEDGE
+	applymovement OBJ_EVENT_ID_PLAYER, PlayerDorm_WakeUp_Movement_1
 # 33 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	waitse
+	playse SE_PIN
 # 34 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	waitmovement 0
+	waitse
 # 35 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	delay 60
+# 36 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, PlayerDorm_WakeUp_Movement_2
+# 37 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	playse SE_LEDGE
+# 38 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	waitse
+# 39 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	waitmovement 0
+# 40 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	call Player_Dorm_Enter_Tracie
 	return
 
 
 Player_Dorm_Door_Knocking::
-# 39 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	playse SE_NOT_EFFECTIVE
-# 40 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	waitse
-# 41 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	playse SE_NOT_EFFECTIVE
-# 42 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	waitse
-# 43 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	playse SE_NOT_EFFECTIVE
 # 44 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	playse SE_NOT_EFFECTIVE
+# 45 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	waitse
+# 46 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	playse SE_NOT_EFFECTIVE
+# 47 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	waitse
+# 48 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	playse SE_NOT_EFFECTIVE
+# 49 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	waitse
 	return
 
 
 Player_Dorm_Enter_Tracie::
-# 49 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	playse SE_DOOR
-# 50 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	showobjectat LOCALID_TRACIE, MAP_SOUTH_CAMPUS_PLAYER_DORM
-# 51 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	applymovement LOCALID_TRACIE, Player_Dorm_Enter_Tracie_Movement_0
-# 52 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	waitmovement 0
-# 53 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Player_Dorm_Enter_Tracie_Movement_1
 # 54 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	waitmovement 0
+	playse SE_DOOR
 # 55 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	playbgm MUS_LILYCOVE_MUSEUM, TRUE
+	applymovement LOCALID_TRACIE, Tracie_EnterRoom
 # 56 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	delay 40
+	waitmovement LOCALID_TRACIE
 # 57 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	setspeaker SP_NAME_TRACIE
+	applymovement OBJ_EVENT_ID_PLAYER, Player_Dorm_Enter_Tracie_Movement_0
 # 58 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	msgbox Player_Dorm_Enter_Tracie_Text_0
+	waitmovement 0
 # 59 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	closemessage
+	playbgm MUS_LILYCOVE_MUSEUM, TRUE
 # 60 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	applymovement LOCALID_TRACIE, Player_Dorm_Tracie_Approach
+	delay 40
 # 61 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	waitmovement 0
+	setspeaker SP_NAME_TRACIE
 # 62 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Player_Dorm_Enter_Tracie_Movement_2
+	msgbox Player_Dorm_Enter_Tracie_Text_0
 # 63 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	waitmovement 0
+	closemessage
 # 64 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	setspeaker SP_NAME_TRACIE
+	applymovement LOCALID_TRACIE, Player_Dorm_Tracie_Approach
 # 65 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	msgbox Player_Dorm_Enter_Tracie_Text_1
+	waitmovement 0
 # 66 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Player_Dorm_Enter_Tracie_Movement_1
 # 67 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	applymovement LOCALID_TRACIE, Player_Dorm_Enter_Tracie_Movement_3
+	waitmovement 0
 # 68 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	waitmovement 0
+	setspeaker SP_NAME_TRACIE
 # 69 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	setspeaker SP_NAME_TRACIE
+	msgbox Player_Dorm_Enter_Tracie_Text_1
 # 70 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	msgbox Player_Dorm_Enter_Tracie_Text_2
+	closemessage
 # 71 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	closemessage
+	applymovement LOCALID_TRACIE, Player_Dorm_Enter_Tracie_Movement_2
 # 72 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	applymovement LOCALID_TRACIE, Player_Dorm_Enter_Tracie_Movement_4
+	waitmovement 0
 # 73 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	waitmovement 0
-# 74 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	setspeaker SP_NAME_TRACIE
+# 74 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	msgbox Player_Dorm_Enter_Tracie_Text_2
 # 75 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	msgbox Player_Dorm_Enter_Tracie_Text_3
-# 76 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	closemessage
+# 76 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	applymovement LOCALID_TRACIE, Player_Dorm_Enter_Tracie_Movement_3
 # 77 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	applymovement LOCALID_TRACIE, Player_Dorm_Tracie_Leaves
-# 78 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	waitmovement 0
+# 78 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	setspeaker SP_NAME_TRACIE
 # 79 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	hideobjectat LOCALID_TRACIE, MAP_SOUTH_CAMPUS_PLAYER_DORM
+	msgbox Player_Dorm_Enter_Tracie_Text_3
 # 80 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	playse SE_EXIT
+	closemessage
 # 81 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	removeobject LOCALID_TRACIE
+	applymovement LOCALID_TRACIE, Player_Dorm_Tracie_Leaves
 # 82 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	setflag FLAG_HIDE_TRACIE
+	waitmovement 0
 # 83 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	setflag FLAG_SYS_B_DASH
+	hideobjectat LOCALID_TRACIE, MAP_SOUTH_CAMPUS_PLAYER_DORM
 # 84 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	setvar VAR_PLAYERDORM_STATE, 1
+	playse SE_EXIT
 # 85 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	removeobject LOCALID_TRACIE
+# 86 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	setflag FLAG_HIDE_TRACIE
+# 87 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	setflag FLAG_SYS_B_DASH
+# 88 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	setvar VAR_PLAYERDORM_STATE, 1
+# 89 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	releaseall
 	end
 
 
-# 89 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 93 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+Tracie_EnterRoom:
+# 94 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	set_visible
+# 95 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	walk_up
+	step_end
+
+# 98 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 Player_Dorm_Tracie_Approach:
-# 90 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 99 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	walk_up
-# 90 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 99 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	walk_up
-# 90 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 99 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	walk_up
-# 91 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 100 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	walk_left
-# 91 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 100 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	walk_left
-# 91 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 100 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	walk_left
 	step_end
 
-# 94 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 103 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 Player_Dorm_Tracie_Leaves:
-# 95 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 104 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	walk_fast_right
-# 95 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 104 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	walk_fast_right
-# 95 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 104 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	walk_fast_right
-# 96 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 105 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	walk_fast_down
-# 96 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 105 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	walk_fast_down
-# 96 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 105 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	walk_fast_down
 	step_end
 
 Player_Dorm_Take_Eevee::
-# 100 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	setvar VAR_PLAYERDORM_STATE, 2
-# 101 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	givemon SPECIES_EEVEE, 10, ITEM_ORAN_BERRY
-# 102 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	removeobject LOCALID_EEVEE
-# 103 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	updatefollowingmon
-# 104 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 105 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	msgbox Player_Dorm_Take_Eevee_Text_0
-# 106 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	waitfanfare
-# 107 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	setflag FLAG_TAKE_EEVEE
-# 108 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
 # 109 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	call Player_Dorm_Nickname_Eevee
+	setvar VAR_PLAYERDORM_STATE, 2
 # 110 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	givemon SPECIES_EEVEE, 10, ITEM_ORAN_BERRY
+# 111 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	removeobject LOCALID_EEVEE
+# 112 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	updatefollowingmon
+# 113 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 114 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	msgbox Player_Dorm_Take_Eevee_Text_0
+# 115 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	waitfanfare
+# 116 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	setflag FLAG_TAKE_EEVEE
+# 117 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	setflag FLAG_SYS_POKEMON_GET
+# 118 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	call Player_Dorm_Nickname_Eevee
+# 119 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	release
 	end
 
 
 Player_Dorm_Nickname_Eevee::
-# 115 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 124 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	msgbox Player_Dorm_Nickname_Eevee_Text_0, MSGBOX_YESNO
-# 116 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 125 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Player_Dorm_Nickname_Eevee_2
 Player_Dorm_Nickname_Eevee_1:
 	return
 
 Player_Dorm_Nickname_Eevee_2:
-# 117 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 126 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 118 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 127 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	goto Player_Dorm_Nickname_Eevee_1
 
 
 Player_Dorm_EventScript_CheckPlayersPC::
-# 124 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 133 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	setvar VAR_0x8004, 1
-# 125 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 134 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	special DoPCTurnOnEffect
-# 126 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 135 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	playse SE_PC_ON
-# 127 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 136 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	msgbox Player_Dorm_EventScript_CheckPlayersPC_Text_0, MSGBOX_DEFAULT
-# 128 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 137 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	special BedroomPC
-# 129 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 138 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	waitstate
-# 130 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 139 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	releaseall
 	end
 
 
 Player_Dorm_Trigger_CantLeave::
-# 135 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 144 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	lock
-# 136 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 145 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	msgbox Player_Dorm_Trigger_CantLeave_Text_0
-# 137 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 146 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	closemessage
-# 138 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	applymovement OBJ_EVENT_ID_PLAYER, Player_Dorm_Enter_Tracie_Movement_0
-# 139 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 147 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Player_Dorm_Trigger_CantLeave_Movement_0
+# 148 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	waitmovement 0
-# 140 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 149 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	release
 	end
 
 
 Player_Dorm_NintendoSwitch::
-# 145 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 154 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	msgbox Player_Dorm_NintendoSwitch_Text_0
-# 146 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 155 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	release
 	end
 
 
 Player_Dorm_Drawers::
-# 151 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 160 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	msgbox Player_Dorm_Drawers_Text_0
-# 152 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 161 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	release
 	end
 
 
 EventScript_New_TV::
-# 157 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 166 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	msgbox EventScript_New_TV_Text_0
-# 158 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 167 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	release
 	end
 
 
-# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 PlayerDorm_WakeUp_Movement_0:
-# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	slide_right
-# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	slide_right
-# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	slide_right
-# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	slide_right
-# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	slide_right
-# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	slide_right
-# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	slide_right
-# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	slide_right
-# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	slide_right
-# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	slide_right
-# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	slide_right
-# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	slide_right
-# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	slide_right
-# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	slide_right
-# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	slide_right
-# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	slide_right
-# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	slide_right
-# 18 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 22 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	face_left
 	step_end
 
-# 27 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 32 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 PlayerDorm_WakeUp_Movement_1:
-# 27 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 32 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	face_down
-# 27 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 32 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 31 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 36 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 PlayerDorm_WakeUp_Movement_2:
-# 31 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 36 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	jump_right
 	step_end
 
-# 51 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 57 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 Player_Dorm_Enter_Tracie_Movement_0:
-# 51 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-	walk_up
-	step_end
-
-# 53 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-Player_Dorm_Enter_Tracie_Movement_1:
-# 53 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 57 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	face_down
 	step_end
 
-# 62 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-Player_Dorm_Enter_Tracie_Movement_2:
-# 62 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 66 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+Player_Dorm_Enter_Tracie_Movement_1:
+# 66 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	face_right
 	step_end
 
-# 67 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-Player_Dorm_Enter_Tracie_Movement_3:
-# 67 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 71 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+Player_Dorm_Enter_Tracie_Movement_2:
+# 71 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	walk_right
-# 67 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 71 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	walk_right
 	step_end
 
-# 72 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
-Player_Dorm_Enter_Tracie_Movement_4:
-# 72 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 76 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+Player_Dorm_Enter_Tracie_Movement_3:
+# 76 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	walk_fast_left
-# 72 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 76 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	walk_fast_left
+	step_end
+
+# 147 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+Player_Dorm_Trigger_CantLeave_Movement_0:
+# 147 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+	walk_up
 	step_end
 
 PlayerDorm_WakeUp_Text_0:
-# 15 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 17 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	.string "Hello…? {PLAYER}?\p"
 	.string "{PLAYER}, are you there?$"
 
 Player_Dorm_Enter_Tracie_Text_0:
-# 58 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 62 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	.string "Ugh! Seriously?$"
 
 Player_Dorm_Enter_Tracie_Text_1:
-# 65 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 69 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	.string "You're sleeping right now?\n"
 	.string "Today of all days?\p"
 	.string "Come on! You didn't actually forget,\n"
@@ -401,47 +413,47 @@ Player_Dorm_Enter_Tracie_Text_1:
 	.string "we were kids!$"
 
 Player_Dorm_Enter_Tracie_Text_2:
-# 70 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 74 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	.string "I can’t believe it…\n"
 	.string "Me… Tracie!\p"
 	.string "Soon to be grad and official Pokémon\n"
 	.string "Trainer!$"
 
 Player_Dorm_Enter_Tracie_Text_3:
-# 75 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 79 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	.string "Well, what are we waiting for!?\p"
 	.string "Grab {COLOR GREEN}Eevee {COLOR DARK_GRAY}and let's go!\n"
 	.string "I'm so excited!$"
 
 Player_Dorm_Take_Eevee_Text_0:
-# 105 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 114 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	.string "{PLAYER} picked up their\npartner, Eevee!$"
 
 Player_Dorm_Nickname_Eevee_Text_0:
-# 115 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 124 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	.string "Does Eevee have a nickname?$"
 
 Player_Dorm_EventScript_CheckPlayersPC_Text_0:
-# 127 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 136 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	.string "{PLAYER} booted up the laptop.$"
 
 Player_Dorm_Trigger_CantLeave_Text_0:
-# 136 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 145 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	.string "You can't leave without {COLOR GREEN}Eevee {COLOR DARK_GRAY}.$"
 
 Player_Dorm_NintendoSwitch_Text_0:
-# 145 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 154 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	.string "It's a Nintendo Switch 2.\p"
 	.string "There are two JoyCons attached to the\n"
 	.string "sides.$"
 
 Player_Dorm_Drawers_Text_0:
-# 151 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 160 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	.string "The drawers are filled with clothes and\n"
 	.string "school supplies.$"
 
 EventScript_New_TV_Text_0:
-# 157 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
+# 166 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	.string "Mom would like this show…\n"
 	.string "… … …\p"
 	.string "Time to go!$"

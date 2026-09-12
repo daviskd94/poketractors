@@ -1,3 +1,313 @@
 SouthCampus_DormHallway_MapScripts::
+# 2 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, SouthCampus_DormHallway_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
+SouthCampus_DormHallway_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+# 3 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	map_script_2 VAR_PLAYERDORM_STATE, 2, DormHallway_LeaveDorm
+	.2byte 0
+
+
+DormHallway_LeaveDorm::
+# 8 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	setspeaker SP_NAME_TRACIE
+# 9 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	msgbox DormHallway_LeaveDorm_Text_0
+# 10 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	closemessage
+# 11 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	call DormHallway_EnterRotcart
+# 12 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, DormHallway_LeaveDorm_Movement_0
+# 13 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	waitmovement 0
+# 14 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	setspeaker SP_NAME_TRACIE
+# 15 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	msgbox DormHallway_LeaveDorm_Text_1
+# 16 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	closemessage
+# 17 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, DormHallway_LeaveDorm_Movement_1
+# 18 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	applymovement LOCALID_TRACIE_DORM_HALLWAY, DormHallway_LeaveDorm_Movement_2
+# 19 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	waitmovement 0
+# 20 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	removeobject LOCALID_TRACIE_DORM_HALLWAY
+# 21 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	playse SE_DOOR
+# 22 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	waitse
+# 23 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	setflag FLAG_HIDE_TRACIEROTCART
+# 24 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	setvar VAR_PLAYERDORM_STATE, 3
+# 25 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	callnative UpdateFollowingPokemon
+	end
+
+
+DormHallway_EnterRotcart::
+# 30 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	playse SE_DOOR
+# 31 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	waitse
+# 33 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	applymovement LOCALID_ROTCART_DORM_HALLWAY, DormHallway_EnterRotcart_Movement_0
+# 34 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	waitmovement 0
+# 35 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, DormHallway_EnterRotcart_Movement_1
+# 36 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	applymovement LOCALID_TRACIE_DORM_HALLWAY, DormHallway_EnterRotcart_Movement_1
+# 37 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	waitmovement 0
+# 38 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	setspeaker SP_NAME_UNKNOWN
+# 39 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	msgbox DormHallway_EnterRotcart_Text_0
+# 40 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	closemessage
+# 41 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, DormHallway_EnterRotcart_Movement_2
+# 42 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	applymovement LOCALID_TRACIE_DORM_HALLWAY, DormHallway_EnterRotcart_Movement_2
+# 43 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	waitmovement 0
+# 44 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	applymovement LOCALID_ROTCART_DORM_HALLWAY, DormHallway_EnterRotcart_Movement_3
+# 45 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	waitmovement 0
+# 46 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	removeobject LOCALID_ROTCART_DORM_HALLWAY
+# 47 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	fadedefaultbgm
+	return
+
+
+DormHallway_DontLeave::
+# 52 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	lock
+# 53 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	msgbox DormHallway_DontLeave_Text_0
+# 54 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	closemessage
+# 55 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, DormHallway_DontLeave_Movement_0
+# 56 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	waitmovement 0
+# 57 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	release
+	end
+
+
+Player_Dorm_EventScript_PlayerSign::
+# 63 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	lock
+# 64 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	msgbox Player_Dorm_EventScript_PlayerSign_Text_0
+# 65 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	release
+	end
+
+
+Player_Dorm_EventScript_TracieSign::
+# 70 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	lock
+# 71 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	msgbox Player_Dorm_EventScript_TracieSign_Text_0
+# 72 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	release
+	end
+
+
+Player_Dorm_EventScript_RotcartSign::
+# 77 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	lock
+# 78 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	msgbox Player_Dorm_EventScript_RotcartSign_Text_0
+# 79 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	release
+	end
+
+
+Player_Dorm_EventScript_BuckSign::
+# 84 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	lock
+# 85 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	msgbox Player_Dorm_EventScript_BuckSign_Text_0
+# 86 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	release
+	end
+
+
+Player_Dorm_EventScript_ColtonSign::
+# 91 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	lock
+# 92 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	msgbox Player_Dorm_EventScript_ColtonSign_Text_0
+# 93 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	release
+	end
+
+
+Player_Dorm_EventScript_CelesteGabeSign::
+# 98 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	lock
+# 99 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	msgbox Player_Dorm_EventScript_CelesteGabeSign_Text_0
+# 100 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	release
+	end
+
+
+# 12 "data/maps/SouthCampus_DormHallway/scripts.pory"
+DormHallway_LeaveDorm_Movement_0:
+# 12 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	face_down
+	step_end
+
+# 17 "data/maps/SouthCampus_DormHallway/scripts.pory"
+DormHallway_LeaveDorm_Movement_1:
+# 17 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	face_right
+	step_end
+
+# 18 "data/maps/SouthCampus_DormHallway/scripts.pory"
+DormHallway_LeaveDorm_Movement_2:
+# 18 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 18 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 18 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 18 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 18 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 18 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 18 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 18 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 18 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 18 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_up
+	step_end
+
+# 33 "data/maps/SouthCampus_DormHallway/scripts.pory"
+DormHallway_EnterRotcart_Movement_0:
+# 33 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 33 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 33 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 33 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 33 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 33 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 33 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 33 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+	step_end
+
+# 35 "data/maps/SouthCampus_DormHallway/scripts.pory"
+DormHallway_EnterRotcart_Movement_1:
+# 35 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	face_left
+	step_end
+
+# 41 "data/maps/SouthCampus_DormHallway/scripts.pory"
+DormHallway_EnterRotcart_Movement_2:
+# 41 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_down
+# 41 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	face_up
+	step_end
+
+# 44 "data/maps/SouthCampus_DormHallway/scripts.pory"
+DormHallway_EnterRotcart_Movement_3:
+# 44 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 44 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 44 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 44 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 44 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 44 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 44 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 44 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+# 44 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_right
+	step_end
+
+# 55 "data/maps/SouthCampus_DormHallway/scripts.pory"
+DormHallway_DontLeave_Movement_0:
+# 55 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	walk_down
+	step_end
+
+DormHallway_LeaveDorm_Text_0:
+# 9 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	.string "Oh! Before I forget!\p"
+	.string "I need to stop at my room to\n"
+	.string "grab some things.$"
+
+DormHallway_LeaveDorm_Text_1:
+# 15 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	.string "Ugh! Rotcart…\n"
+	.string "What an asshole!\p"
+	.string "I know he's one of the strongest\n"
+	.string "Trainers in this school, but does he\l"
+	.string "really have to be such a dick?\p"
+	.string "At least you're able to give him a run\n"
+	.string "for his money…\p"
+	.string "He does have a point though,\n"
+	.string "we need to get going!\p"
+	.string "Follow me to my room!$"
+
+DormHallway_EnterRotcart_Text_0:
+# 39 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	.string "… … …\p… … …\n… … …\pMove.$"
+
+DormHallway_DontLeave_Text_0:
+# 53 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	.string "Tracie's dorm isn't this way.$"
+
+Player_Dorm_EventScript_PlayerSign_Text_0:
+# 64 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	.string "{PLAYER}'s room$"
+
+Player_Dorm_EventScript_TracieSign_Text_0:
+# 71 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	.string "Tracie's room$"
+
+Player_Dorm_EventScript_RotcartSign_Text_0:
+# 78 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	.string "Rotcart's room$"
+
+Player_Dorm_EventScript_BuckSign_Text_0:
+# 85 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	.string "Celeste, Marcie, and Lyssa's room$"
+
+Player_Dorm_EventScript_ColtonSign_Text_0:
+# 92 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	.string "Bertie, Colton, and Buck's room$"
+
+Player_Dorm_EventScript_CelesteGabeSign_Text_0:
+# 99 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	.string "Gabe and Orthoc's room$"

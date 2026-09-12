@@ -13,6 +13,11 @@
 #define QUEST_MENU_CHECK_REWARD         8  //checks if questId is in Reward state. Returns result to gSpecialVar_Result
 #define QUEST_MENU_CHECK_COMPLETE       9   //checks if questId has been completed. Returns result to gSpecialVar_Result
 #define QUEST_MENU_BUFFER_QUEST_NAME    10   //buffers a quest name to gStringVar1
+#define QUEST_MENU_OPEN_ALL             11   //opens the quest menu to "All Quests" tab (questId = 0)
+#define QUEST_MENU_OPEN_INACTIVE        12   //opens the quest menu to "Inactive Quests" tab (questId = 0)
+#define QUEST_MENU_OPEN_ACTIVE          13   //opens the quest menu to "Active Quests" tab (questId = 0)
+#define QUEST_MENU_OPEN_REWARD          14   //opens the quest menu to "Reward Available" tab (questId = 0)
+#define QUEST_MENU_OPEN_COMPLETED       15   //opens the quest menu to "Completed Quests" tab (questId = 0)
 
 // quest number defines
 #define QUEST_ORIENTATION               0

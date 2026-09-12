@@ -699,6 +699,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,
     [OBJ_EVENT_GFX_SUPER_NERD] =               &gObjectEventGraphicsInfo_SuperNerd,
     [OBJ_EVENT_GFX_TRACIE] =                  &gObjectEventGraphicsInfo_Tracie,
+    [OBJ_EVENT_GFX_ROTCART] =                  &gObjectEventGraphicsInfo_Rotcart,
     [OBJ_EVENT_GFX_GENESIS_M] =               &gObjectEventGraphicsInfo_GenesisMale,
     [OBJ_EVENT_GFX_GENESIS_F] =               &gObjectEventGraphicsInfo_GenesisFemale,
     [OBJ_EVENT_GFX_ACE_TRAINER_M] =           &gObjectEventGraphicsInfo_AceTrainerM,

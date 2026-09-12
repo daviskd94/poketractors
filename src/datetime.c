@@ -6,9 +6,9 @@
 const struct DateTime gGen3Epoch =
 {
     .year = 2000,
-    .month = MONTH_JAN,
+    .month = MONTH_SEP,
     .day = 1,
-    .dayOfWeek = WEEKDAY_SAT,
+    .dayOfWeek = WEEKDAY_MON,
     .hour = 0,
     .minute = 0,
     .second = 0,

@@ -151,7 +151,7 @@ script Player_Dorm_Trigger_CantLeave {
 }
 
 script Player_Dorm_NintendoSwitch {
-    msgbox(format("It's a Nintendo Switch 2.\pThere are two JoyCons attached to the sides."))
+    msgbox(format("It's a Nintendo Switch 2.\pThere are two JoyCons\nattached to the sides."))
     release
     end
 }

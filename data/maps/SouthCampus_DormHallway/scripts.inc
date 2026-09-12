@@ -54,6 +54,8 @@ DormHallway_EnterRotcart::
 	playse SE_DOOR
 # 31 "data/maps/SouthCampus_DormHallway/scripts.pory"
 	waitse
+# 32 "data/maps/SouthCampus_DormHallway/scripts.pory"
+	playbgm CUS_ENCOUNTER_ROTCART, FALSE
 # 33 "data/maps/SouthCampus_DormHallway/scripts.pory"
 	applymovement LOCALID_ROTCART_DORM_HALLWAY, DormHallway_EnterRotcart_Movement_0
 # 34 "data/maps/SouthCampus_DormHallway/scripts.pory"

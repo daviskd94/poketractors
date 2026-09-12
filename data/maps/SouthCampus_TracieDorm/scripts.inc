@@ -101,6 +101,14 @@ TracieDorm_PichuDoll::
 	return
 
 
+TracieDorm_Laptop::
+# 58 "data/maps/SouthCampus_TracieDorm/scripts.pory"
+	msgbox TracieDorm_Laptop_Text_0
+# 59 "data/maps/SouthCampus_TracieDorm/scripts.pory"
+	closemessage
+	return
+
+
 # 10 "data/maps/SouthCampus_TracieDorm/scripts.pory"
 TracieDorm_Enter_Movement_0:
 # 10 "data/maps/SouthCampus_TracieDorm/scripts.pory"
@@ -174,3 +182,7 @@ TracieDorm_TracieFollowDialogue_Text_0:
 TracieDorm_PichuDoll_Text_0:
 # 53 "data/maps/SouthCampus_TracieDorm/scripts.pory"
 	.string "It's a life sized Pichu doll.$"
+
+TracieDorm_Laptop_Text_0:
+# 58 "data/maps/SouthCampus_TracieDorm/scripts.pory"
+	.string "It's Tracie's laptop.\pHer wallpaper is a picture of her\nBuneary as a baby!$"

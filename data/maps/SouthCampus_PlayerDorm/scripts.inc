@@ -444,8 +444,8 @@ Player_Dorm_Trigger_CantLeave_Text_0:
 Player_Dorm_NintendoSwitch_Text_0:
 # 154 "data/maps/SouthCampus_PlayerDorm/scripts.pory"
 	.string "It's a Nintendo Switch 2.\p"
-	.string "There are two JoyCons attached to the\n"
-	.string "sides.$"
+	.string "There are two JoyCons\n"
+	.string "attached to the sides.$"
 
 Player_Dorm_Drawers_Text_0:
 # 160 "data/maps/SouthCampus_PlayerDorm/scripts.pory"

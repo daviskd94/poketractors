@@ -1327,7 +1327,7 @@ static void Task_NewGameBirchSpeech_Init(u8 taskId)
     gTasks[taskId].tPlayerSpriteId = SPRITE_NONE;
     gTasks[taskId].data[3] = 0xFF;
     gTasks[taskId].tTimer = 0xD8;
-    PlayBGM(MUS_ROUTE122);
+    PlayBGM(CUS_ANCIENT_PONI_PATH);
     ShowBg(0);
     ShowBg(1);
 }
@@ -1371,7 +1371,7 @@ void CB2_NewGameBirchSpeech_FromNewMainMenu(void) // Combination of the Above fu
     FreeAllSpritePalettes();
     ResetAllPicSprites();
     AddBirchSpeechObjects(taskId);
-    PlayBGM(MUS_ROUTE122);
+    PlayBGM(CUS_ANCIENT_PONI_PATH);
     BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
     SetGpuReg(REG_OFFSET_WIN0H, 0);
     SetGpuReg(REG_OFFSET_WIN0V, 0);
@@ -1970,7 +1970,7 @@ static void SpriteCB_MovePlayerDownWhileShrinking(struct Sprite *sprite)
 
 static u8 NewGameBirchSpeech_CreateLotadSprite(u8 x, u8 y)
 {
-    return CreateMonPicSprite_Affine(SPECIES_LOTAD, FALSE, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
+    return CreateMonPicSprite_Affine(SPECIES_TOGEPI, FALSE, 0, MON_PIC_AFFINE_FRONT, x, y, 14, TAG_NONE);
 }
 
 static void AddBirchSpeechObjects(u8 taskId)

@@ -9041,3 +9041,42 @@ DirectSoundWaveData_sd90_classical_whistle::
 	.align 2
 DirectSoundWaveData_sd90_enhanced_delay_shaku::
 	.incbin "sound/direct_sound_samples/sd90_enhanced_delay_shaku.bin"
+
+
+
+	.align 2
+DirectSoundWaveData_sd90_sawtooth_wave::
+	.incbin "sound/direct_sound_samples/sd90_sawtooth_wave.bin"
+
+	.align 2
+DirectSoundWaveData_sc88pro_orch_hit::
+	.incbin "sound/direct_sound_samples/sc88pro_orch_hit.bin"
+
+	.align 2
+DirectSoundWaveData_qy70_sawtooth_wave::
+	.incbin "sound/direct_sound_samples/qy70_sawtooth_wave.bin"
+
+	.align 2
+DirectSoundWaveData_dd_trumpet_ensemble::
+	.incbin "sound/direct_sound_samples/dd_trumpet_ensemble.bin"
+
+	.align 2
+DirectSoundWaveData_dd_hard_kick::
+	.incbin "sound/direct_sound_samples/dd_hard_kick.bin"
+
+	.align 2
+DirectSoundWaveData_dd_bubbles::
+	.incbin "sound/direct_sound_samples/dd_bubbles.bin"
+
+	.align 2
+DirectSoundWaveData_dd_orchestra_hit::
+	.incbin "sound/direct_sound_samples/dd_orchestra_hit.bin"
+
+	.align 2
+DirectSoundWaveData_dd_techno_snare::
+	.incbin "sound/direct_sound_samples/dd_techno_snare.bin"
+
+DirectSoundWaveData_sc88pro_room_snare::
+	.incbin "sound/direct_sound_samples/sc88pro_room_snare.bin"
+
+

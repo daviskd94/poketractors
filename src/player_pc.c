@@ -168,10 +168,10 @@ static EWRAM_DATA u8 sTopMenuNumOptions = 0;
 EWRAM_DATA struct PlayerPCItemPageStruct gPlayerPCItemPageInfo = {};
 static EWRAM_DATA struct ItemStorageMenu *sItemStorageMenu = NULL;
 
-static const u8 sText_WithdrawItem[] = _("WITHDRAW ITEM");
-static const u8 sText_DepositItem[] = _("DEPOSIT ITEM");
-static const u8 sText_TossItem[] = _("TOSS ITEM");
-static const u8 sText_Mailbox[] = _("MAILBOX");
+static const u8 sText_WithdrawItem[] = _("Withdraw Item");
+static const u8 sText_DepositItem[] = _("Deposit Item");
+static const u8 sText_TossItem[] = _("Toss Item");
+static const u8 sText_Mailbox[] = _("Mailbox");
 
 static const u8 sText_WithdrawHowManyItems[] = _("Withdraw how many\n{STR_VAR_1}?");
 static const u8 sText_WithdrawXItems[] = _("Withdrew {STR_VAR_2}\n{STR_VAR_1}.");
@@ -188,17 +188,17 @@ static const u8 *const sItemStorage_OptionDescriptions[] =
 
 static const struct MenuAction sPlayerPCMenuActions[] =
 {
-    [MENU_ITEMSTORAGE] = { COMPOUND_STRING("ITEM STORAGE"), {PlayerPC_ItemStorage} },
+    [MENU_ITEMSTORAGE] = { COMPOUND_STRING("Item Storage"), {PlayerPC_ItemStorage} },
     [MENU_MAILBOX]     = { sText_Mailbox,                   {PlayerPC_Mailbox} },
-    [MENU_DECORATION]  = { COMPOUND_STRING("DECORATION"),   {PlayerPC_Decoration} },
-    [MENU_TURNOFF]     = { COMPOUND_STRING("TURN OFF"),     {PlayerPC_TurnOff} }
+   // [MENU_DECORATION]  = { COMPOUND_STRING("DECORATION"),   {PlayerPC_Decoration} },
+    [MENU_TURNOFF]     = { COMPOUND_STRING("Turn Off"),     {PlayerPC_TurnOff} }
 };
 
 static const u8 sBedroomPC_OptionOrder[] =
 {
     MENU_ITEMSTORAGE,
     MENU_MAILBOX,
-    MENU_DECORATION,
+   // MENU_DECORATION,
     MENU_TURNOFF
 };
 #define NUM_BEDROOM_PC_OPTIONS ARRAY_COUNT(sBedroomPC_OptionOrder)
@@ -206,7 +206,7 @@ static const u8 sBedroomPC_OptionOrder[] =
 static const u8 sPlayerPC_OptionOrder[] =
 {
     MENU_ITEMSTORAGE,
-    MENU_MAILBOX,
+    //MENU_MAILBOX,
     MENU_TURNOFF
 };
 #define NUM_PLAYER_PC_OPTIONS ARRAY_COUNT(sPlayerPC_OptionOrder)
@@ -227,9 +227,9 @@ static const u16 sNewGamePCItems[][2] =
 
 const struct MenuAction gMailboxMailOptions[] =
 {
-    { COMPOUND_STRING("READ"),        {Mailbox_DoMailRead} },
-    { COMPOUND_STRING("MOVE TO BAG"), {Mailbox_MoveToBag} },
-    { COMPOUND_STRING("GIVE"),        {Mailbox_Give} },
+    { COMPOUND_STRING("Read"),        {Mailbox_DoMailRead} },
+    { COMPOUND_STRING("Move to Bag"), {Mailbox_MoveToBag} },
+    { COMPOUND_STRING("Give"),        {Mailbox_Give} },
     { gText_Cancel2,                  {Mailbox_Cancel} }
 };
 
@@ -240,7 +240,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenus[] =
         .tilemapLeft = 1,
         .tilemapTop = 1,
         .width = 9,
-        .height = 6,
+        .height = 4,
         .paletteNum = 15,
         .baseBlock = 1
     },
@@ -249,7 +249,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenus[] =
         .tilemapLeft = 1,
         .tilemapTop = 1,
         .width = 9,
-        .height = 8,
+        .height = 6,
         .paletteNum = 15,
         .baseBlock = 1
     },
@@ -400,6 +400,7 @@ static void InitPlayerPCMenu(u8 taskId)
         windowTemplate = sWindowTemplates_MainMenus[WIN_MAIN_MENU_BEDROOM];
 
     windowTemplate.width = GetMaxWidthInSubsetOfMenuTable(sPlayerPCMenuActions, sTopMenuOptionOrder, sTopMenuNumOptions);
+    windowTemplate.height = 2 * sTopMenuNumOptions;
     tWindowId = AddWindow(&windowTemplate);
     SetStandardWindowBorderStyle(tWindowId, FALSE);
     PrintMenuActionTextsInUpperLeftCorner(tWindowId, sTopMenuNumOptions, sPlayerPCMenuActions, sTopMenuOptionOrder);
@@ -482,11 +483,11 @@ static void PlayerPC_Mailbox(u8 taskId)
     }
 }
 
-static void PlayerPC_Decoration(u8 taskId)
+/*static void PlayerPC_Decoration(u8 taskId)
 {
     DoPlayerRoomDecorationMenu(taskId);
 }
-
+*/
 static void PlayerPC_TurnOff(u8 taskId)
 {
     if (sTopMenuNumOptions == NUM_BEDROOM_PC_OPTIONS) // Flimsy way to determine if Bedroom PC is in use

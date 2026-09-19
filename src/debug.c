@@ -3951,6 +3951,7 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
 
 
 #define SOUND_LIST_BGM              \
+    X(MUS_DUMMY)                    \
     X(MUS_LITTLEROOT_TEST)          \
     X(MUS_GSC_ROUTE38)              \
     X(MUS_CAUGHT)                   \
@@ -4162,7 +4163,11 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_RG_TEACHY_TV_MENU)        \
     X(CUS_VS_WILD)                  \
     X(CUS_ANCIENT_PONI_PATH)        \
-    X(CUS_ENCOUNTER_ROTCART)
+    X(END_MUS)                      \
+    X(CUS_ENCOUNTER_ROTCART)        \
+    X(CUS_ENCOUNTER_GENESIS)        \
+    X(CUS_VS_TEAM_GENESIS)          \
+    X(CUS_VS_TRAINER)
 
 #define SOUND_LIST_SE               \
     X(SE_USE_ITEM)                  \

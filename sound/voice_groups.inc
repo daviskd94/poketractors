@@ -204,3 +204,6 @@
 .include "sound/voicegroups/voicegroup191.inc"
 .include "sound/voicegroups/voicegroup192.inc"
 .include "sound/voicegroups/voicegroup193.inc"
+.include "sound/voicegroups/encounter_genesis.inc"
+.include "sound/voicegroups/vs_genesis.inc"
+.include "sound/voicegroups/vs_trainer_t.inc"

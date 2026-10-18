@@ -4163,11 +4163,10 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_RG_TEACHY_TV_MENU)        \
     X(CUS_VS_WILD)                  \
     X(CUS_ANCIENT_PONI_PATH)        \
-    X(END_MUS)                      \
     X(CUS_ENCOUNTER_ROTCART)        \
     X(CUS_ENCOUNTER_GENESIS)        \
     X(CUS_VS_TEAM_GENESIS)          \
-    X(CUS_VS_TRAINER)
+    X(CUS_VS_TRAINER)               
 
 #define SOUND_LIST_SE               \
     X(SE_USE_ITEM)                  \
@@ -4453,6 +4452,7 @@ u32 FindSong(enum SongType type, enum FindSongMode mode, u32 fromSongId)
 {
     static const u8 sSEPrefix[] = _("SE_");
     static const u8 sMUSPrefix[] = _("MUS_");
+    static const u8 sCUSPrefix[] = _("CUS_");
     const u8 *prefix;
     u32 prefixLength;
     switch (type)
@@ -4506,8 +4506,11 @@ u32 FindSong(enum SongType type, enum FindSongMode mode, u32 fromSongId)
     while (TRUE)
     {
         // Found a match.
-        if (sSongNames[songId] != NULL && StringCompareN(sSongNames[songId], prefix, prefixLength - 1) == 0)
-            return songId;
+    if (sSongNames[songId] != NULL
+        && (StringCompareN(sSongNames[songId], prefix, prefixLength - 1) == 0
+            || (type == SONG_MUS
+             && StringCompareN(sSongNames[songId], sCUSPrefix, ARRAY_COUNT(sCUSPrefix) - 1) == 0)))
+        return songId;
 
         // No match in table.
         if (songId == stopAfter)
